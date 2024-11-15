@@ -1,0 +1,147 @@
+'use client'
+
+import React from 'react';
+import { Modal, Container, Form, Row, Col } from 'react-bootstrap';
+import { RiUserLine, RiMailLine, RiLockPasswordLine } from 'react-icons/ri';
+import { StyledModal, StyledButton, GradientText, StyledFormControl, StyledFormLabel, StyledFormSelect } from './styles/LoginStyles';
+import LoginImageUploadComp from './LoginImageUploadComp';
+import { useTheme } from '@/context/ThemeContext';
+
+function LoginSignupModalComp({ 
+  showModal, 
+  handleModalClose, 
+  handleSignupSubmit,
+  profileImage,
+  coverImage,
+  handleImageUpload,
+  setProfileImage,
+  setCoverImage,
+  anos,
+  meses,
+  dias 
+}) {
+  const { theme } = useTheme();
+
+  return (
+    <StyledModal show={showModal} onHide={handleModalClose} size="lg" theme={theme}>
+      <Modal.Header closeButton>
+        <Modal.Title><GradientText theme={theme}>Cadastre-se</GradientText></Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Container>
+          <Form onSubmit={handleSignupSubmit}>
+            <LoginImageUploadComp 
+              profileImage={profileImage}
+              coverImage={coverImage}
+              handleImageUpload={handleImageUpload}
+              setProfileImage={setProfileImage}
+              setCoverImage={setCoverImage}
+            />
+            <Row>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <StyledFormLabel theme={theme}>Nome</StyledFormLabel>
+                  <div className="input-group">
+                    <span className="input-group-text" style={{background: `linear-gradient(${theme.gradientDirection}, ${theme.primaryColor}, ${theme.secondaryColor})`, color: 'white'}}>
+                      <RiUserLine />
+                    </span>
+                    <StyledFormControl type="text" name="nome" placeholder="Seu nome" required theme={theme} />
+                  </div>
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group className="mb-3">
+                  <StyledFormLabel theme={theme}>Sobrenome</StyledFormLabel>
+                  <div className="input-group">
+                    <span className="input-group-text" style={{background: `linear-gradient(${theme.gradientDirection}, ${theme.primaryColor}, ${theme.secondaryColor})`, color: 'white'}}>
+                      <RiUserLine />
+                    </span>
+                    <StyledFormControl type="text" name="sobrenome" placeholder="Seu sobrenome" required theme={theme} />
+                  </div>
+                </Form.Group>
+              </Col>
+            </Row>
+            {/* Resto dos campos do formulário */}
+            <Row>
+              <Col md={4}>
+                <Form.Group className="mb-3">
+                  <StyledFormLabel theme={theme}>País</StyledFormLabel>
+                  <StyledFormControl type="text" name="pais" placeholder="Seu país" required theme={theme} />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group className="mb-3">
+                  <StyledFormLabel theme={theme}>Estado</StyledFormLabel>
+                  <StyledFormControl type="text" name="estado" placeholder="Seu estado" required theme={theme} />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group className="mb-3">
+                  <StyledFormLabel theme={theme}>Cidade</StyledFormLabel>
+                  <StyledFormControl type="text" name="cidade" placeholder="Sua cidade" required theme={theme} />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Form.Group className="mb-3">
+              <StyledFormLabel theme={theme}>Data de Nascimento</StyledFormLabel>
+              <Row>
+                <Col xs={4}>
+                  <StyledFormSelect name="dia" theme={theme}>
+                    <option value="">Dia</option>
+                    {dias.map(dia => <option key={dia} value={dia}>{dia}</option>)}
+                  </StyledFormSelect>
+                </Col>
+                <Col xs={4}>
+                  <StyledFormSelect name="mes" theme={theme}>
+                    <option value="">Mês</option>
+                    {meses.map((mes, index) => <option key={index} value={index + 1}>{mes}</option>)}
+                  </StyledFormSelect>
+                </Col>
+                <Col xs={4}>
+                  <StyledFormSelect name="ano" theme={theme}>
+                    <option value="">Ano</option>
+                    {anos.map(ano => <option key={ano} value={ano}>{ano}</option>)}
+                  </StyledFormSelect>
+                </Col>
+              </Row>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <StyledFormLabel theme={theme}>Gênero</StyledFormLabel>
+              <div>
+                <Form.Check
+                  inline
+                  type="radio"
+                  label="Masculino"
+                  name="genero"
+                  value="masculino"
+                  id="genero-masculino"
+                />
+                <Form.Check
+                  inline
+                  type="radio"
+                  label="Feminino"
+                  name="genero"
+                  value="feminino"
+                  id="genero-feminino"
+                />
+                <Form.Check
+                  inline
+                  type="radio"
+                  label="Outro"
+                  name="genero"
+                  value="outro"
+                  id="genero-outro"
+                />
+              </div>
+            </Form.Group>
+            <StyledButton variant="primary" type="submit" theme={theme}>
+              Cadastrar
+            </StyledButton>
+          </Form>
+        </Container>
+      </Modal.Body>
+    </StyledModal>
+  );
+}
+
+export default LoginSignupModalComp;
