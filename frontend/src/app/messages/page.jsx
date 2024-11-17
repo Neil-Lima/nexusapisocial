@@ -1,15 +1,15 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '../../context/ThemeContext';
-import { GradientBackground } from '../../components/messages/styles/MessagesStyle';
-import MessagesContactListComp from '../../components/messages/MessagesContactListComp';
-import MessagesConversationComp from '../../components/messages/MessagesConversationComp';
-import MessagesVideoCallComp from '../../components/messages/MessagesVideoCallComp';
-import { fetchContacts, fetchMessages } from '../../components/messages/utils/MessagesUtils';
+import { useTheme } from '@/context/ThemeContext';
+import { GradientBackground } from '@/components/messages/styles/MessagesStyle';
+import MessagesContactListComp from '@/components/messages/MessagesContactListComp';
+import MessagesConversationComp from '@/components/messages/MessagesConversationComp';
+import MessagesVideoCallComp from '@/components/messages/MessagesVideoCallComp';
+import { fetchContacts, fetchMessages } from '@/components/messages/utils/MessagesUtils';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 
-function MessagesPage() {
+export default function MessagesPage() {
   const { theme } = useTheme();
   const [contacts, setContacts] = useState([]);
   const [messages, setMessages] = useState([]);
@@ -37,43 +37,42 @@ function MessagesPage() {
   }, [selectedContact]);
 
   return (
-    <>  <NavMenuComp/>
-    <GradientBackground theme={theme}>
-      <Container fluid>
-        <Row>
-          <Col md={4} lg={3}>
-            <MessagesContactListComp
-              contacts={contacts}
-              selectedContact={selectedContact}
-              onSelectContact={setSelectedContact}
-            />
-          </Col>
-          <Col md={8} lg={9}>
-            {selectedContact ? (
-              showVideoCall ? (
-                <MessagesVideoCallComp
-                  contact={selectedContact}
-                  onEndCall={() => setShowVideoCall(false)}
-                />
+    <>
+      <NavMenuComp />
+      <GradientBackground theme={theme}>
+        <Container fluid>
+          <Row>
+            <Col md={4} lg={3}>
+              <MessagesContactListComp
+                contacts={contacts}
+                activeContact={selectedContact}
+                setActiveContact={setSelectedContact}
+                theme={theme}
+              />
+            </Col>
+            <Col md={8} lg={9}>
+              {selectedContact ? (
+                showVideoCall ? (
+                  <MessagesVideoCallComp
+                    contact={selectedContact}
+                    onEndCall={() => setShowVideoCall(false)}
+                  />
+                ) : (
+                  <MessagesConversationComp
+                    contact={selectedContact}
+                    messages={messages}
+                    onStartVideoCall={() => setShowVideoCall(true)}
+                  />
+                )
               ) : (
-                <MessagesConversationComp
-                  contact={selectedContact}
-                  messages={messages}
-                  onStartVideoCall={() => setShowVideoCall(true)}
-                />
-              )
-            ) : (
-              <div className="d-flex align-items-center justify-content-center h-100">
-                <h3>Select a contact to start chatting</h3>
-              </div>
-            )}
-          </Col>
-        </Row>
-      </Container>
-    </GradientBackground>
+                <div className="d-flex align-items-center justify-content-center h-100">
+                  <h3>Select a contact to start chatting</h3>
+                </div>
+              )}
+            </Col>
+          </Row>
+        </Container>
+      </GradientBackground>
     </>
-  
   );
 }
-
-export default MessagesPage;

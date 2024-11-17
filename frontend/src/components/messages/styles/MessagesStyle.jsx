@@ -1,10 +1,46 @@
 'use client';
 import styled from 'styled-components';
+import { Card, Button } from 'react-bootstrap';
 
 export const GradientBackground = styled.div`
   background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   min-height: 100vh;
   padding: 20px;
+`;
+export const StatusIndicator = styled.div`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: ${props => props.$online ? '#4CAF50' : '#9E9E9E'};
+  margin-left: 10px;
+`;
+
+export const StyledButton = styled(Button)`
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.secondaryColor}, ${props.theme.primaryColor})`};
+  }
+`;
+
+export const StyledCard = styled(Card)`
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #ffffff;
+  overflow: hidden;
 `;
 
 export const ContactListContainer = styled.div`
@@ -38,23 +74,36 @@ export const SearchBar = styled.div`
   }
 `;
 
+
 export const ContactList = styled.div`
+  max-height: calc(100vh - 200px);
   overflow-y: auto;
-  flex: 1;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
 `;
 
-export const ContactItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  background: ${props => props.selected ? 'rgba(255, 255, 255, 0.1)' : 'transparent'};
-  transition: all 0.3s ease;
+ 
 
+export const ContactItem = styled.div`
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: ${props => props['data-active'] === 'true' ? 'rgba(255, 255, 255, 0.1)' : 'transparent'};
+  
   &:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 `;
+
+
+
+
 
 export const Avatar = styled.div`
   width: 50px;
@@ -99,9 +148,13 @@ export const LastMessage = styled.p`
   color: rgba(255, 255, 255, 0.7);
 `;
 
-export const MessageTime = styled.small`
-  color: rgba(255, 255, 255, 0.5);
+export const MessageTime = styled.span`
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 5px;
+  align-self: ${props => props.$sent ? 'flex-end' : 'flex-start'};
 `;
+
 
 export const UnreadBadge = styled.span`
   background: ${props => props.theme.highlightColor};
@@ -112,7 +165,12 @@ export const UnreadBadge = styled.span`
   margin-top: 5px;
   display: inline-block;
 `;
-
+export const MessageGroup = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
 export const ConversationContainer = styled.div`
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -156,11 +214,55 @@ export const ActionButton = styled.button`
 export const MessagesContainer = styled.div`
   flex: 1;
   overflow-y: auto;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 `;
+
+
+export const Message = styled.div`
+  max-width: 60%;
+  padding: 15px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: ${props => props.$sent ? '0 0 0 auto' : '0 auto 0 0'};
+  background-color: ${props => props.$sent ? 
+    props.theme.primaryColor : 
+    'rgba(255, 255, 255, 0.1)'
+  };
+  color: #ffffff;
+  
+  p {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+export const DateDivider = styled.div`
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  span {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 10px;
+    position: relative;
+    color: #ffffff;
+  }
+`;
+
 
 export const MessageBubble = styled.div`
   max-width: 70%;
@@ -178,12 +280,11 @@ export const MessageBubble = styled.div`
   }
 `;
 
-export const MessageStatus = styled.small`
+export const MessageStatus = styled.span`
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.8em;
-  display: block;
-  text-align: right;
-  margin-top: 5px;
+  margin-top: 2px;
+  align-self: flex-end;
 `;
 
 export const InputContainer = styled.div`

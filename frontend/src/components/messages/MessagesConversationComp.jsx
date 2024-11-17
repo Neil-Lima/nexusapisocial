@@ -5,40 +5,57 @@ import MessagesInputComp from './MessagesInputComp';
 import {
   ConversationContainer,
   MessagesContainer,
-  MessageBubble,
+  Message,
   MessageTime,
-  MessageStatus
+  MessageStatus,
+  MessageGroup,
+  DateDivider
 } from './styles/MessagesStyle';
 import { useTheme } from '@/context/ThemeContext';
+import { groupMessagesByDate } from './utils/MessagesUtils';
 
-function MessagesConversationComp({ contact, messages, onStartVideoCall }) {
+export default function MessagesConversationComp({ contact, messages, onStartVideoCall }) {
   const { theme } = useTheme();
+
+  const renderMessageGroups = () => {
+    const groups = groupMessagesByDate(messages || []);
+    return Object.entries(groups).map(([date, messages]) => (
+      <MessageGroup key={date}>
+        <DateDivider>
+          <span>{new Date(date).toLocaleDateString()}</span>
+        </DateDivider>
+        {messages.map(msg => (
+          <Message key={msg.id} $sent={msg.sent} theme={theme}>
+            <p>{msg.text}</p>
+            <MessageTime>
+              {new Date(msg.time).toLocaleTimeString([], { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+              })}
+            </MessageTime>
+            {msg.sent && (
+              <MessageStatus>
+                {msg.read ? 'Read' : 'Sent'}
+              </MessageStatus>
+            )}
+          </Message>
+        ))}
+      </MessageGroup>
+    ));
+  };
 
   return (
     <ConversationContainer theme={theme}>
-      <MessagesHeaderComp contact={contact} onStartVideoCall={onStartVideoCall} />
+      <MessagesHeaderComp 
+        contact={contact} 
+        onStartVideoCall={onStartVideoCall} 
+      />
       
       <MessagesContainer>
-        {messages.map((message) => (
-          <MessageBubble
-            key={message.id}
-            sent={message.sent}
-            theme={theme}
-          >
-            <p>{message.content}</p>
-            <MessageTime>{message.time}</MessageTime>
-            {message.sent && (
-              <MessageStatus>
-                {message.read ? 'Read' : 'Sent'}
-              </MessageStatus>
-            )}
-          </MessageBubble>
-        ))}
+        {renderMessageGroups()}
       </MessagesContainer>
 
       <MessagesInputComp />
     </ConversationContainer>
   );
 }
-
-export default MessagesConversationComp;

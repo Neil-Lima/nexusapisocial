@@ -1,8 +1,25 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
+
+export const groupMessagesByDate = (messages = []) => {
+  const groups = {};
+  messages.forEach(message => {
+    if (message && message.time) {
+      try {
+        const date = format(new Date(message.time), 'yyyy-MM-dd');
+        if (!groups[date]) {
+          groups[date] = [];
+        }
+        groups[date].push(message);
+      } catch (error) {
+        console.log('Invalid date format:', message.time);
+      }
+    }
+  });
+  return groups;
+};
 
 export const fetchContacts = async () => {
-  // Simulated API call
   return [
     {
       id: 1,
@@ -35,26 +52,25 @@ export const fetchContacts = async () => {
 };
 
 export const fetchMessages = async (contactId) => {
-  // Simulated API call
   return [
     {
       id: 1,
-      content: 'Hey, how are you?',
-      time: '10:00',
+      text: 'Hey, how are you?',
+      time: new Date().toISOString(),
       sent: true,
       read: true
     },
     {
       id: 2,
-      content: 'I\'m good, thanks! How about you?',
-      time: '10:02',
+      text: 'I\'m good, thanks! How about you?',
+      time: new Date().toISOString(),
       sent: false,
       read: true
     },
     {
       id: 3,
-      content: 'Great! Want to train together today?',
-      time: '10:03',
+      text: 'Great! Want to train together today?',
+      time: new Date().toISOString(),
       sent: true,
       read: true
     }

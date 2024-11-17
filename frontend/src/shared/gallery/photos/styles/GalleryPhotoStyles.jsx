@@ -9,9 +9,11 @@ const fadeIn = keyframes`
 
 export const PhotoGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 `;
+
 
 export const PhotoItem = styled.div`
   position: relative;
@@ -67,18 +69,19 @@ export const ModalImage = styled(Image)`
 `;
 
 export const ActionButton = styled.button`
-  background: none;
+  background: ${props => props.theme.cardBackground};
   border: none;
-  color: ${props => props.theme.textColor || '#ffffff'};
-  font-size: 1rem;
-  padding: 10px 15px;
-  margin-right: 15px;
-  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: ${props => props.theme.textColor};
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: all 0.3s ease;
 
   &:hover {
-    color: ${props => props.theme.primaryColor};
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    background: ${props => props.theme.primaryColor};
   }
 `;
 
@@ -172,4 +175,96 @@ export const MoodBoardItem = styled.div`
     object-fit: cover;
   }
 `;
+export const ActionButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+export const ViewOptionsContainer = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 
+export const IconButton = styled.button`
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${props => props.theme.primaryColor};
+    transform: scale(1.1);
+  }
+`;
+
+export const PhotoActions = styled.div`
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+`;
+export const PhotoInfo = styled.div`
+  color: white;
+  
+  h4 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+`;
+
+export const PhotoOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+`;
+
+export const PhotoImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`;
+
+export const PhotoCard = styled.div`
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    
+    .photo-overlay {
+      opacity: 1;
+    }
+  }
+`;
