@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { ProfileActions, ActionButton } from '../styles/ProfileStyles';
+import { ProfileActions, ActionButton } from './styles/ProfileStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faEnvelope, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { TabContent } from '../../styles/ProfileStyles';
+import { TabContent } from './styles/ProfileStyles';
 import GalleryPhotoGridComp from '@/shared/gallery/photos/grid/GalleryPhotoGridComp';
 import GalleryVideoGridComp from '@/shared/gallery/videos/grid/GalleryVideoGridComp';
 import GalleryVideoModalComp from '@/shared/gallery/videos/modal/GalleryVideoModalComp';

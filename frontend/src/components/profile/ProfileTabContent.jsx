@@ -1,12 +1,11 @@
-'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import ProfileAboutComp from './about/ProfileAboutComp';
-import ProfilePostsComp from './posts/ProfilePostsComp';
-import ProfileGalleryComp from './gallery/ProfileGalleryComp';
-import ProfileConnectionsComp from './connections/ProfileConnectionsComp';
-import ProfileAchievementsComp from './achievements/ProfileAchievementsComp';
-import ProfileEventsComp from './events/ProfileEventsComp';
+import ProfileAboutComp from './ProfileAboutComp';
+import ProfilePostsComp from './ProfilePostsComp';
+import ProfileGalleryComp from './ProfileGalleryComp';
+import ProfileConnectionsComp from './ProfileConnectionsComp';
+import ProfileAchievementsComp from './ProfileAchievementsComp';
+import ProfileEventsComp from './ProfileEventsComp';
 
 const ProfileTabContent = ({ activeTab, profileData }) => {
   const { theme } = useTheme();

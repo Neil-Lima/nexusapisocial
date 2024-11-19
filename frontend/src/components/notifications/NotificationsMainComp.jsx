@@ -38,7 +38,7 @@ export default function NotificationsMainComp() {
     <GradientBackground theme={theme}>
       <Container>
         <Row>
-          <Col lg={3}>
+          <Col lg={2}>
             <ProfileCardComp />
             <MenuListComp />
           </Col>

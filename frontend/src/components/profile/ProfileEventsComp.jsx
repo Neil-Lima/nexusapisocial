@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { TabContent, EventCard, Grid } from '../../styles/ProfileStyles';
+import { TabContent, EventCard, Grid } from './styles/ProfileStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faCalendar, faUsers } from '@fortawesome/free-solid-svg-icons';
 

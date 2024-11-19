@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { TabContent, ConnectionCard, Grid } from '../../styles/ProfileStyles';
+import { TabContent, ConnectionCard, Grid } from './styles/ProfileStyles';
 import SuggestionsFriendComp from '@/shared/suggestions/SuggestionsFriendComp';
 
 const ProfileConnectionsComp = ({ followers, following }) => {

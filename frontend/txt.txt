@@ -1,15 +1,15 @@
 divida o componentes react normal em next.js sem ts, divida eles no diretório de acordo com a seguinte estrutura:
 src/
   app/
-    pages/       
+    jobs/       
           page.jsx
     page.jsx
 components/ 
-    pages/
+    jobs/
           styles/
-             pagesStyle.jsx
+             JobsStyle.jsx
           utils/  
-             pagesUtils.jsx
+             JobsUtils.jsx
 context/
     ThemeContext.js     
 layout/
@@ -24,9 +24,9 @@ shared/
    componentes reutilizaveis     
          
 
-no diretório pages em components os components devem ser dividos com o nome começando com pages e terminando com Comp.jsx e nao Component.jsx
+no diretório Jobs em components os components devem ser dividos com o nome começando com Jobs e terminando com Comp.jsx e nao Component.jsx
 
-ex: pagesModalComp.jsx, pagesButtonComp.jsx, etc. 
+ex: JobsModalComp.jsx, JobsButtonComp.jsx, etc. 
 
 todos os estilos devem ser colocados no diretório styles e os utils no diretório utils os utils sao todas as funções e logicas que podem ser usadas 
 

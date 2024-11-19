@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { ProfileHeader, CoverImage, ProfileAvatar, ProfileInfo, ProfileStats } from '../styles/ProfileStyles';
+import { ProfileHeader, CoverImage, ProfileAvatar, ProfileInfo, ProfileStats } from './styles/ProfileStyles';
 import ProfileActionsComp from './ProfileActionsComp';
 
 const ProfileHeaderComp = ({ profile }) => {

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import { TabContent, AchievementCard, Grid } from '../../styles/ProfileStyles';
+import { TabContent, AchievementCard, Grid } from './styles/ProfileStyles';
 
 const ProfileAchievementsComp = ({ achievements }) => {
   const { theme } = useTheme();

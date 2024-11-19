@@ -5,6 +5,7 @@ import {
     faBriefcase, 
     faUser, 
     faFile, 
+    faHeart,
     faUserCircle 
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,13 +14,15 @@ export const iconMapping = {
     faBriefcase,
     faUser,
     faFile,
+    faHeart,
     faUserCircle
 };
 
 export const menuItems = {
     mainNav: [
         { title: 'Home', path: '/feed', icon: 'faHome' },
-        { title: 'Empregos', path: '/empregos', icon: 'faBriefcase' },
+        { title: 'Empregos', path: '/jobs', icon: 'faBriefcase' },
+        { title: 'Relacionamento', path: '/dating', icon: 'faHeart' },
         { title: 'Perfil', path: '/profileuser', icon: 'faUser' }
     ],
     pages: [
