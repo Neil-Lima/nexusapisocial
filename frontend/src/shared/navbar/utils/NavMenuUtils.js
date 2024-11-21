@@ -20,10 +20,10 @@ export const iconMapping = {
 
 export const menuItems = {
     mainNav: [
-        { title: 'Home', path: '/feed', icon: 'faHome' },
-        { title: 'Empregos', path: '/jobs', icon: 'faBriefcase' },
-        { title: 'Relacionamento', path: '/dating', icon: 'faHeart' },
-        { title: 'Perfil', path: '/profileuser', icon: 'faUser' }
+        { title: '', path: '/feed', icon: 'faHome' },
+        { title: '', path: '/jobs', icon: 'faBriefcase' },
+        { title: '', path: '/dating', icon: 'faHeart' },
+        { title: '', path: '/profileuser', icon: 'faUser' }
     ],
     pages: [
         { title: 'Galeria', path: '/gallery' },

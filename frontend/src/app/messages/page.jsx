@@ -40,7 +40,7 @@ export default function MessagesPage() {
     <>
       <NavMenuComp />
       <GradientBackground theme={theme}>
-        <Container fluid>
+        <Container>
           <Row>
             <Col md={4} lg={3}>
               <MessagesContactListComp

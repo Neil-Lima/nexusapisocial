@@ -15,6 +15,7 @@ import SuggestionsFriendComp from '@/shared/suggestions/SuggestionsFriendComp';
 import NewsLatestComp from '@/shared/news/NewsLatestComp';
 import MessengerWindowComp from '@/shared/messenger/MessengerWindowComp';
 import MenuListComp from '@/shared/menu/MenuListComp';
+import ProfileStatsCardComp from '@/shared/profile/ProfileStatsCardComp';
 
 export default function FeedPage() {
   const { theme } = useTheme();
@@ -27,6 +28,7 @@ export default function FeedPage() {
        <Row>
          <Col lg={3}>
            <ProfileCardComp />
+           <ProfileStatsCardComp />
            <MenuListComp />
          </Col>
          <Col lg={6}>
