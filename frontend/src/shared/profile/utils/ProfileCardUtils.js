@@ -3,6 +3,7 @@
 export const profileData = {
   name: 'Madara Uchiha',
   imageUrl: 'https://3.bp.blogspot.com/-SKgOrjUtWhE/UY2-87zw1PI/AAAAAAAAAH4/oSSr-Zh-6-8/s1600/Madara+Uchiha.jpg',
+  coverUrl: 'https://wallpaperaccess.com/full/2482157.jpg',
   description: {
     prefix: 'Líder do',
     linkText: 'clã Uchiha',

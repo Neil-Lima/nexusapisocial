@@ -10,14 +10,14 @@ function MenuListComp() {
   const { theme } = useTheme();
 
   return (
-    <StyledListGroup className="mb-4">
+    <StyledListGroup theme={theme}>
       {menuItems.map((item, index) => (
         <StyledListGroupItem 
           key={index} 
-          className="border-0 d-flex align-items-center"
+          className="d-flex align-items-center"
         >
           <IconWrapper theme={theme}>
-            <FontAwesomeIcon icon={item.icon} style={{fontSize: '20px', color: '#ffffff'}} />
+            <FontAwesomeIcon icon={item.icon} style={{fontSize: '18px', color: '#ffffff'}} />
           </IconWrapper>
           <MenuText>{item.text}</MenuText>
         </StyledListGroupItem>

@@ -15,19 +15,34 @@ export const StyledProfileCard = styled(Card)`
   margin-bottom: 20px;
 `;
 
+export const CoverImage = styled.div`
+  height: 150px;
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
+`;
+
+export const ProfileImageWrapper = styled.div`
+  position: relative;
+  margin-top: -75px;
+  padding: 0 20px;
+`;
+
+export const ProfileImage = styled(Card.Img)`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: 0 auto;
+  object-fit: cover;
+`;
+
 export const GradientText = styled.span`
   background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 24px;
-`;
-
-export const ProfileImage = styled(Card.Img)`
-  border-radius: 20px 20px 0 0;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
 `;
 
 export const ProfileDescription = styled.p`

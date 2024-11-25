@@ -404,7 +404,7 @@ export const CallControls = styled.div`
 `;
 
 export const ControlButton = styled.button`
-  background: ${props => props.danger ? 
+  background: ${props => props.$danger ? '#ff4444' : 'rgba(255, 255, 255, 0.1)'};
     'rgba(255, 59, 48, 0.8)' : 
     'rgba(255, 255, 255, 0.2)'
   };

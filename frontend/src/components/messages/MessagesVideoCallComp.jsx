@@ -17,9 +17,9 @@ function MessagesVideoCallComp({ contact, onEndCall }) {
   return (
     <VideoCallContainer theme={theme}>
       <VideoGrid>
-        <VideoFrame main>
-          <img src={contact.avatar} alt={contact.name} />
-          <span>{contact.name}</span>
+        <VideoFrame data-main="true">
+          <img src={contact?.avatar} alt={contact?.name} />
+          <span>{contact?.name}</span>
         </VideoFrame>
         <VideoFrame>
           <img src="/your-avatar.jpg" alt="You" />

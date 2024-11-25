@@ -2,7 +2,15 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useTheme } from '@/context/ThemeContext';
-import { StyledProfileCard, GradientText, ProfileImage, ProfileDescription, ProfileLink } from './styles/ProfileCardStyles';
+import { 
+  StyledProfileCard, 
+  GradientText, 
+  ProfileImage, 
+  ProfileDescription, 
+  ProfileLink,
+  CoverImage,
+  ProfileImageWrapper 
+} from './styles/ProfileCardStyles';
 import { profileData } from './utils/ProfileCardUtils';
 
 function ProfileCardComp() {
@@ -10,11 +18,13 @@ function ProfileCardComp() {
 
   return (
     <StyledProfileCard className="text-center">
-      <ProfileImage 
-        variant="top" 
-        src={profileData.imageUrl}
-        alt={profileData.name}
-      />
+      <CoverImage src={profileData.coverUrl} />
+      <ProfileImageWrapper>
+        <ProfileImage 
+          src={profileData.imageUrl}
+          alt={profileData.name}
+        />
+      </ProfileImageWrapper>
       <Card.Body>
         <Card.Title>
           <GradientText theme={theme}>{profileData.name}</GradientText>

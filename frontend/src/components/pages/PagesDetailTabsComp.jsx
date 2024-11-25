@@ -8,11 +8,11 @@ import { faNewspaper, faImage, faVideo, faUser, faInfoCircle } from '@fortawesom
 import PagesDetailPostsComp from './PagesDetailPostsComp';
 import PagesDetailFollowersComp from './PagesDetailFollowersComp';
 import PagesDetailInfoComp from './PagesDetailInfoComp';
-import GalleryPhotoGridComp from '@/shared/gallery/photos/grid/GalleryPhotoGridComp';
-import GalleryPhotoUploadComp from '@/shared/gallery/photos/upload/GalleryPhotoUploadComp';
-import GalleryActionButtons from '@/shared/gallery/photos/buttons/GalleryActionButtons';
-import GalleryAlbumGrid from '@/shared/gallery/photos/album/GalleryAlbumGrid';
-import GalleryPhotoMoodboardComp from '@/shared/gallery/photos/moodboard/GalleryPhotoMoodboardComp';
+import GalleryPhotoGridComp from '@/shared/gallery/photos/components/GalleryPhotoGridComp';
+import GalleryPhotoUploadComp from '@/shared/gallery/photos/components/GalleryPhotoUploadComp';
+import GalleryActionButtons from '@/shared/gallery/photos/GalleryActionButtons';
+import GalleryAlbumGrid from '@/shared/gallery/photos/components/GalleryAlbumGrid';
+import GalleryPhotoMoodboardComp from '@/shared/gallery/photos/components/GalleryPhotoMoodboardComp';
 
 export default function PagesDetailTabsComp({ pageData }) {
   const { theme } = useTheme();

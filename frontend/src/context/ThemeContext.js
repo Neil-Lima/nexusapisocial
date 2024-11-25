@@ -6,14 +6,14 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState({
-    primaryColor: '#8e2de2',
-    secondaryColor: '#4a00e0',
+    primaryColor: '#1a237e',   
+    secondaryColor: '#283593', 
     gradientDirection: '45deg',
     textColor: '#ffffff',
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
     cardBackground: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
-    highlightColor: '#FF0080',
-    secondaryHighlightColor: '#7928CA',
+    highlightColor: '#0d47a1',  
+    secondaryHighlightColor: '#1a237e', 
     buttonHoverTransform: 'translateY(-3px)',
     boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
     borderRadius: '20px',

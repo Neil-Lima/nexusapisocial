@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import { useTheme } from '@/context/ThemeContext';
 import { GradientBackground } from '@/components/group/styles/GroupStyles';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
-import GalleryPhotoModalComp from '@/shared/gallery/photos/GalleryPhotoModalComp';
+import GalleryPhotoModalComp from '@/shared/gallery/photos/components/GalleryPhotoModalComp';
 import GalleryCommentsComp from '@/shared/gallery/photos/GalleryCommentsComp';
 import GalleryShareComp from '@/shared/gallery/photos/GalleryShareComp';
 import { useGalleryPhoto } from '@/shared/gallery/photos/utils/GalleryPhotoUtils';
