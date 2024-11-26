@@ -93,3 +93,34 @@ export const ActionButton = styled.button`
     font-weight: 500;
   }
 `;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border-radius: ${props => props.theme.borderRadius};
+`;
+
+export const PageButton = styled.button`
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  color: ${props => props.theme.textColor};
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: ${props => props.theme.borderRadius};
+  transition: ${props => props.theme.transition};
+  opacity: ${props => props.$isActive ? 1 : 0.7};
+
+  &:hover {
+    transform: ${props => props.theme.buttonHoverTransform};
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+`;

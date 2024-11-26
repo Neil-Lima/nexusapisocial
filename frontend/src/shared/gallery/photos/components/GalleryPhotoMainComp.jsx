@@ -14,6 +14,7 @@ import GalleryPhotoFilterComp from './GalleryPhotoFilterComp';
 import GalleryPhotoGridComp from './GalleryPhotoGridComp';
 import GalleryPhotoModalComp from './GalleryPhotoModalComp';
 import ProfileStatsCardComp from '@/shared/profile/ProfileStatsCardComp';
+import NavMenuComp from '@/shared/navbar/NavMenuComp';
 
 const GalleryPhotoMainComp = () => {
   const { theme } = useTheme();
@@ -29,15 +30,16 @@ const GalleryPhotoMainComp = () => {
   } = useGalleryPhoto();
 
   return (
-    <GradientBackground theme={theme}>
+    <>   
+    <GradientBackground theme={theme}> 
       <MainContainer>
         <Container fluid>
           <Row>
-            <Col lg={3}>
-              <ProfileCardComp theme={theme} />
-              <ProfileStatsCardComp theme={theme} />
-              <MenuListComp theme={theme} />              
-            </Col>
+          <Col lg={3}>
+           <ProfileCardComp theme={theme}/>
+           <ProfileStatsCardComp theme={theme}/>
+           <MenuListComp theme={theme}/> 
+         </Col>
             <Col lg={9}>
               <GallerySection theme={theme}>
                 <GalleryPhotoActionBarComp theme={theme} />
@@ -69,6 +71,8 @@ const GalleryPhotoMainComp = () => {
         </Container>
       </MainContainer>
     </GradientBackground>
+    </>
+ 
   );
 };
 

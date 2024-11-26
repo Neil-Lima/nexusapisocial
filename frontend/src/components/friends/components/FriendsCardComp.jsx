@@ -4,10 +4,12 @@ import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faUserMinus, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@/context/ThemeContext';
-import { FriendItem, StyledButton } from './styles/friendsStyle';
+import { FriendItem, StyledButton } from '../styles/FriendsCardStyles';
+import { handleFriendAction, getActionButtonProps } from '../utils/FriendsCardUtils';
 
 function FriendsCardComp({ friend, onToggleFriend }) {
   const { theme } = useTheme();
+  const actionProps = getActionButtonProps(friend.isFriend);
 
   return (
     <FriendItem>
@@ -21,15 +23,15 @@ function FriendsCardComp({ friend, onToggleFriend }) {
           />
           <h5>{friend.name}</h5>
           <div className="mt-3">
-            <StyledButton variant="primary" theme={theme} className="me-2">
+            <StyledButton theme={theme} className="me-2">
               <FontAwesomeIcon icon={faEnvelope} />
             </StyledButton>
             <StyledButton 
-              variant={friend.isFriend ? "danger" : "success"} 
+              {...actionProps}
               theme={theme}
-              onClick={() => onToggleFriend(friend.id)}
+              onClick={() => handleFriendAction(friend.id, friend.isFriend, onToggleFriend)}
             >
-              <FontAwesomeIcon icon={friend.isFriend ? faUserMinus : faUserPlus} />
+              <FontAwesomeIcon icon={actionProps.icon} />
             </StyledButton>
           </div>
         </div>
