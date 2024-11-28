@@ -27,10 +27,18 @@ export const ImageContainer = styled.div`
         width: 100%;
         height: 100%;
 
-        img {
-            width: 100%;
+        .carousel-inner {
             height: 100%;
-            object-fit: cover;
+        }
+
+        .carousel-item {
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 `;
@@ -48,7 +56,7 @@ export const ProductInfo = styled.div`
 
 export const PriceTag = styled.div`
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 1rem;
     background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
     -webkit-background-clip: text;
@@ -63,45 +71,39 @@ export const PriceTag = styled.div`
 export const SellerInfo = styled.div`
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-
-    img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
+    margin-bottom: 1rem;
 
     h4 {
-        margin: 0;
-        font-size: 1rem;
-    }
-`;
-
-export const Rating = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-
-    span {
-        margin-left: 0.5rem;
         font-size: 0.9rem;
-        color: rgba(255,255,255,0.7);
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: #ffc107;
+
+        span {
+            color: rgba(255, 255, 255, 0.6);
+        }
     }
 `;
 
 export const ActionButtons = styled.div`
     display: flex;
     gap: 1rem;
+    justify-content: flex-end;
 `;
 
 export const ActionButton = styled.button`
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,21 +114,4 @@ export const ActionButton = styled.button`
         background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
         transform: translateY(-2px);
     }
-`;
-
-export const Badge = styled.div`
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: ${props => props.verified ? 
-        `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})` :
-        'rgba(255,255,255,0.1)'
-    };
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    color: white;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 `;

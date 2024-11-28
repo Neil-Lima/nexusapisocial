@@ -34,7 +34,7 @@ export const menuItems = {
         { title: 'Grupos', path: '/groups' },
         { title: 'Grupo Detalhe', path: '/gruposdetalhe' },
         { title: 'Noticias', path: '/' },
-        { title: 'Vendas', path: '/sales' },
+        { title: 'Vendas', path: '/marketplace' },
         { title: 'Videos', path: '/videos' },
         { title: 'Video Studio', path: '/videostudio' },
         { title: 'Paginas', path: '/' },

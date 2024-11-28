@@ -1,32 +1,30 @@
-import { useState } from 'react';
+'use client';
+import { useRouter } from 'next/navigation';
 
-export const useMarketplaceProductCard = () => {
-    const [likedProducts, setLikedProducts] = useState(new Set());
+export const useMarketplaceProductCard = (product) => {
+    const router = useRouter();
 
-    const handleLike = (productId) => {
-        setLikedProducts(prev => {
-            const newSet = new Set(prev);
-            if (newSet.has(productId)) {
-                newSet.delete(productId);
-            } else {
-                newSet.add(productId);
-            }
-            return newSet;
-        });
+    const handleCardClick = () => {
+        router.push(`/marketplace/properties/${product.id}`);
     };
 
-    const handleComment = (productId) => {
-        // Implement comment functionality
-        console.log('Opening comments for product:', productId);
+    const handleLike = (e) => {
+        e.stopPropagation();
+        // Implementar lógica de like
     };
 
-    const handleShare = (productId) => {
-        // Implement share functionality
-        console.log('Sharing product:', productId);
+    const handleComment = (e) => {
+        e.stopPropagation();
+        // Implementar lógica de comentário
+    };
+
+    const handleShare = (e) => {
+        e.stopPropagation();
+        // Implementar lógica de compartilhamento
     };
 
     return {
-        likedProducts,
+        handleCardClick,
         handleLike,
         handleComment,
         handleShare
