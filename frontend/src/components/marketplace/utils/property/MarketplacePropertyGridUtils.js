@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export const useMarketplacePropertyGrid = () => {
     const [viewMode, setViewMode] = useState('grid');
-    const [properties, setProperties] = useState([
+    const [properties] = useState([
         {
             id: 1,
             title: 'Apartamento Moderno',
@@ -32,19 +32,9 @@ export const useMarketplacePropertyGrid = () => {
         setViewMode(mode);
     };
 
-    const handleSortChange = (sortType) => {
-        // Implementar lógica de ordenação
-    };
-
-    const handlePageChange = (page) => {
-        // Implementar lógica de paginação
-    };
-
     return {
         viewMode,
         properties,
-        handleViewChange,
-        handleSortChange,
-        handlePageChange
+        handleViewChange
     };
 };

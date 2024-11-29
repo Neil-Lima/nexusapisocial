@@ -2,84 +2,112 @@
 import styled from 'styled-components';
 
 export const CategoriesContainer = styled.div`
+    padding: 2rem;
     background: ${props => props.theme.cardBackground};
     border-radius: ${props => props.theme.borderRadius};
-    padding: 2rem;
-    color: white;
+    box-shadow: ${props => props.theme.boxShadow};
+    margin-bottom: 2rem;
 
     h3 {
+        color: #ffffff;
         margin-bottom: 2rem;
         font-weight: 600;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
 `;
 
 export const CategoryCard = styled.div`
-    background: rgba(255,255,255,0.1);
-    border-radius: ${props => props.theme.borderRadius};
+    background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
     padding: 1.5rem;
+    border-radius: ${props => props.theme.borderRadius};
     cursor: pointer;
-    transition: all 0.3s ease;
-    height: 100%;
+    transition: ${props => props.theme.transition};
+    box-shadow: ${props => props.theme.boxShadow};
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: 100%;
+    min-height: 180px;
+    justify-content: center;
 
     &:hover {
-        transform: translateY(-5px);
-        background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-        box-shadow: ${props => props.theme.boxShadow};
+        transform: ${props => props.theme.buttonHoverTransform};
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 `;
 
 export const IconWrapper = styled.div`
-    width: 60px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     height: 60px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     transition: all 0.3s ease;
 
-    svg {
-        font-size: 24px;
-        color: white;
-    }
-
-    ${CategoryCard}:hover & {
-        background: rgba(255,255,255,0.2);
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
         transform: scale(1.1);
     }
 `;
 
 export const CategoryInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
     h4 {
-        margin: 0 0 0.5rem;
-        font-size: 1.1rem;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
         font-weight: 600;
+        font-size: 1.2rem;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
     }
 
     span {
+        color: #ffffff;
+        opacity: 0.9;
         font-size: 0.9rem;
-        color: rgba(255,255,255,0.7);
+        font-weight: 500;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
     }
 `;
 
 export const ViewAllButton = styled.button`
-    background: none;
-    border: 2px solid ${props => props.theme.primaryColor};
-    border-radius: 25px;
-    color: white;
+    background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+    color: #ffffff;
+    border: none;
     padding: 1rem 2rem;
+    border-radius: ${props => props.theme.borderRadius};
     margin-top: 2rem;
-    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s ease;
+    box-shadow: ${props => props.theme.boxShadow};
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 
     &:hover {
-        background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-        transform: translateY(-2px);
-        box-shadow: ${props => props.theme.boxShadow};
+        transform: ${props => props.theme.buttonHoverTransform};
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    &:active {
+        transform: translateY(1px);
     }
 `;

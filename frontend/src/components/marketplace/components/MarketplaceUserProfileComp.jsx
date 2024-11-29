@@ -18,7 +18,11 @@ function MarketplaceUserProfileComp() {
 
     return (
         <ProfileContainer theme={theme}>
-            <ProfileImage src={userProfile.avatar} alt={userProfile.name} theme={theme} />
+            <ProfileImage 
+                src={userProfile.avatar} 
+                alt={userProfile.name} 
+                theme={theme} 
+            />
             <ProfileInfo theme={theme}>
                 <ProfileName theme={theme}>{userProfile.name}</ProfileName>
                 <ProfileRole theme={theme}>{userProfile.role}</ProfileRole>

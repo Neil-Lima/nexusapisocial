@@ -5,8 +5,10 @@ import MarketplacePropertyMainComp from '@/components/marketplace/components/pro
 
 export default function MarketplacePropertiesPage() {
   return (
-    <ThemeProvider>
-      <MarketplacePropertyMainComp />
-    </ThemeProvider>
+   <>
+   <MarketplacePropertyMainComp />
+   </>
+      
+   
   );
 }

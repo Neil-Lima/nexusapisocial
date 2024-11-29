@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
     faLaptop, 
     faTshirt, 
@@ -12,6 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export const useMarketplaceCategories = () => {
+    const router = useRouter();
     const [selectedCategory, setSelectedCategory] = useState(null);
     
     const categories = [
@@ -27,6 +29,9 @@ export const useMarketplaceCategories = () => {
 
     const handleCategoryClick = (categoryId) => {
         setSelectedCategory(categoryId);
+        if (categoryId === 3) {
+            router.push('/marketplace/properties');
+        }
     };
 
     return {
