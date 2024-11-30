@@ -1,12 +1,12 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 
 export const StatsContainer = styled.div`
   width: 100%;
   padding: 2rem;
-  background: ${props => props.theme.cardBackground};
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   border-radius: ${props => props.theme.borderRadius};
-  color: white;
+  color: ${props => props.theme.textColor};
 `;
 
 export const HeaderSection = styled.div`
@@ -14,26 +14,31 @@ export const HeaderSection = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .filters {
     display: flex;
     gap: 1rem;
 
     button {
-      background: rgba(255, 255, 255, 0.1);
+      background: ${props => props.theme.primaryColor};
       border: none;
       padding: 0.5rem 1rem;
       border-radius: ${props => props.theme.borderRadius};
-      color: white;
+      color: ${props => props.theme.textColor};
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: ${props => props.theme.transition};
 
       &:hover {
-        background: ${props => props.theme.primaryColor};
+        transform: translateY(-3px);
+        box-shadow: ${props => props.theme.boxShadow};
       }
 
       &.active {
-        background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+        background: ${props => props.theme.highlightColor};
       }
     }
   }
@@ -43,17 +48,16 @@ export const ScoreSection = styled.div`
   margin-bottom: 2rem;
 
   .score-display {
-    background: rgba(255, 255, 255, 0.1);
+    background: ${props => props.theme.primaryColor};
     padding: 2rem;
     border-radius: ${props => props.theme.borderRadius};
     text-align: center;
+    box-shadow: ${props => props.theme.boxShadow};
 
     .score {
       font-size: 3rem;
       font-weight: bold;
-      background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: ${props => props.theme.highlightColor};
       margin: 1rem 0;
     }
 
@@ -67,7 +71,7 @@ export const ScoreSection = styled.div`
         display: flex;
         justify-content: space-between;
         padding: 0.5rem;
-        background: rgba(255, 255, 255, 0.05);
+        background: ${props => props.theme.primaryColor};
         border-radius: ${props => props.theme.borderRadius};
       }
     }
@@ -82,14 +86,14 @@ export const MetricsGrid = styled.div`
 `;
 
 export const MetricCard = styled.div`
-  background: rgba(255, 255, 255, 0.1);
+  background: ${props => props.theme.primaryColor};
   padding: 1.5rem;
   border-radius: ${props => props.theme.borderRadius};
-  transition: all 0.3s ease;
+  transition: ${props => props.theme.transition};
+  box-shadow: ${props => props.theme.boxShadow};
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: ${props => props.theme.boxShadow};
   }
 
   h4 {
@@ -112,37 +116,52 @@ export const MetricCard = styled.div`
 
   .chart {
     height: 60px;
-    background: rgba(255, 255, 255, 0.05);
+    background: ${props => props.theme.primaryColor};
     border-radius: ${props => props.theme.borderRadius};
   }
 `;
 
 export const ChartSection = styled.div`
   margin-bottom: 2rem;
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .chart-container {
     height: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+    background: ${props => props.theme.primaryColor};
     border-radius: ${props => props.theme.borderRadius};
-    padding: 1rem;
   }
 `;
 
 export const AmenitiesSection = styled.div`
   margin-bottom: 2rem;
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .amenities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    margin-top: 1rem;
 
     .amenity-card {
       display: flex;
       align-items: center;
       gap: 1rem;
-      background: rgba(255, 255, 255, 0.1);
+      background: ${props => props.theme.primaryColor};
       padding: 1rem;
       border-radius: ${props => props.theme.borderRadius};
+      transition: ${props => props.theme.transition};
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: ${props => props.theme.boxShadow};
+      }
 
       .icon {
         width: 40px;
@@ -150,18 +169,8 @@ export const AmenitiesSection = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background: ${props => props.theme.primaryColor};
+        background: ${props => props.theme.highlightColor};
         border-radius: 50%;
-      }
-
-      .info {
-        h4 {
-          margin-bottom: 0.25rem;
-        }
-
-        .rating {
-          color: #FFC107;
-        }
       }
     }
   }
@@ -169,19 +178,30 @@ export const AmenitiesSection = styled.div`
 
 export const TransportSection = styled.div`
   margin-bottom: 2rem;
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .transport-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    margin-top: 1rem;
 
     .transport-card {
       display: flex;
       align-items: center;
       gap: 1rem;
-      background: rgba(255, 255, 255, 0.1);
+      background: ${props => props.theme.primaryColor};
       padding: 1rem;
       border-radius: ${props => props.theme.borderRadius};
+      transition: ${props => props.theme.transition};
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: ${props => props.theme.boxShadow};
+      }
 
       .icon {
         width: 40px;
@@ -189,25 +209,19 @@ export const TransportSection = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background: ${props => props.theme.primaryColor};
+        background: ${props => props.theme.highlightColor};
         border-radius: 50%;
-      }
-
-      .details {
-        h4 {
-          margin-bottom: 0.25rem;
-        }
-
-        .frequency {
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
-        }
       }
     }
   }
 `;
 
 export const SafetySection = styled.div`
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
+
   .safety-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -215,9 +229,15 @@ export const SafetySection = styled.div`
     margin-bottom: 1rem;
 
     .safety-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: ${props => props.theme.primaryColor};
       padding: 1rem;
       border-radius: ${props => props.theme.borderRadius};
+      transition: ${props => props.theme.transition};
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: ${props => props.theme.boxShadow};
+      }
 
       h4 {
         margin-bottom: 0.5rem;
@@ -234,14 +254,16 @@ export const SafetySection = styled.div`
         
         &.better { color: #4CAF50; }
         &.worse { color: #F44336; }
-        &.similar { color: #FFC107; }
+                &.similar { color: #FFC107; }
       }
     }
   }
 
   .safety-map {
     height: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    background: ${props => props.theme.primaryColor};
     border-radius: ${props => props.theme.borderRadius};
+    margin-top: 1rem;
   }
 `;
+

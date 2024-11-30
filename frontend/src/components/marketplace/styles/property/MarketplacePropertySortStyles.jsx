@@ -3,23 +3,34 @@ import styled from "styled-components";
 
 export const SortContainer = styled.div`
   margin-bottom: 2rem;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
 
   h5 {
-    color: ${(props) => props.theme.textColor};
+    color: ${props => props.theme.textColor};
     text-align: right;
+    margin-bottom: 1rem;
   }
 
   .form-select {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: ${(props) => props.theme.textColor};
+    background: ${props => props.theme.primaryColor};  // Cor sólida base
+    border: none;
+    color: ${props => props.theme.textColor};
+    border-radius: ${props => props.theme.borderRadius};
+    transition: ${props => props.theme.transition};
 
     &:focus {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: ${(props) => props.theme.primaryColor};
-      box-shadow: none;
+      background: ${props => props.theme.secondaryColor};
+      box-shadow: ${props => props.theme.boxShadow};
     }
-  }
+
+    option {
+      background: ${props => props.theme.primaryColor};
+      color: ${props => props.theme.textColor};
+    }
+}
+
 `;
 
 export const ViewToggle = styled.div`
@@ -28,16 +39,18 @@ export const ViewToggle = styled.div`
   margin-left: 1rem;
 
   svg {
-    color: ${(props) => props.theme.primaryColor};
+    color: ${props => props.theme.textColor};
     cursor: pointer;
-    transition: ${(props) => props.theme.transition};
+    transition: ${props => props.theme.transition};
+    font-size: 1.2rem;
 
     &:hover {
-      transform: ${(props) => props.theme.buttonHoverTransform};
+      transform: translateY(-3px);
+      color: ${props => props.theme.highlightColor};
     }
 
     &.active {
-      color: ${(props) => props.theme.secondaryColor};
+      color: ${props => props.theme.highlightColor};
     }
   }
 `;

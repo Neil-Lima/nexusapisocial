@@ -16,9 +16,9 @@ function MarketplacePropertyPriceFilterComp() {
   return (
     <FilterCard theme={theme}>
       <Card.Body>
-        <FilterTitle>Preço do imóvel</FilterTitle>
+        <FilterTitle theme={theme}>Preço do imóvel</FilterTitle>
         <Form>
-          <PriceInputGroup>
+          <PriceInputGroup theme={theme}>
             <Form.Group>
               <Form.Label>Mínimo</Form.Label>
               <Form.Control

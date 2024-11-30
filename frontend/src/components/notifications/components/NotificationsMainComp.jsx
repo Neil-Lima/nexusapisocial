@@ -7,9 +7,9 @@ import { useNotificationsMain } from '../utils/NotificationsMainUtils';
 import NotificationsHeaderComp from './NotificationsHeaderComp';
 import NotificationsFilterComp from './NotificationsFilterComp';
 import NotificationsListComp from './NotificationsListComp';
-import ProfileStatsCardComp from '@/shared/profile/ProfileStatsCardComp';
-import ProfileCardComp from '@/shared/profile/ProfileCardComp';
-import MenuListComp from '@/shared/profile/MenuListComp';
+import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
+import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import MenuListComp from '@/shared/profile/components/MenuListComp';
 
 const NotificationsMainComp = () => {
   const { theme } = useTheme();

@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const PostContainer = styled.div`
-  background: ${props => props.theme.cardBackground};
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: ${props => props.theme.borderRadius};

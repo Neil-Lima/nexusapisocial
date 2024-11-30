@@ -6,16 +6,16 @@ import { GradientBackground, GradientText, IconWrapper } from '@/styles/GlobalSt
 
 // Componentes Globais
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
-import ProfileCardComp from '@/shared/profile/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
 import StoriesComp from '@/shared/stories/StoriesComp';
-import CreatePostComp from '@/shared/post/CreatePostComp';
-import PostCardComp from '@/shared/post/PostCardComp';
+import CreatePostComp from '@/shared/post/components/CreatePostComp';
+import PostCardComp from '@/shared/post/components/PostCardComp';
 import LoadMoreComp from '@/shared/loadmore/LoadMoreComp';
 import SuggestionsFriendComp from '@/shared/suggestions/SuggestionsFriendComp';
 import NewsLatestComp from '@/shared/news/NewsLatestComp';
 import MessengerWindowComp from '@/shared/messenger/MessengerWindowComp';
-import ProfileStatsCardComp from '@/shared/profile/ProfileStatsCardComp';
-import MenuListComp from '@/shared/profile/MenuListComp';
+import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
+import MenuListComp from '@/shared/profile/components/MenuListComp';
 
 export default function FeedPage() {
   const { theme } = useTheme();

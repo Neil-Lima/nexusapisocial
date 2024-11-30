@@ -17,14 +17,12 @@ function MarketplacePropertyRoomFilterComp() {
     <FilterContainer theme={theme}>
       <ListGroup>
         <ListGroup.Item>
-          <FilterTitle>Quartos</FilterTitle>
-          <ButtonGroup>
+          <FilterTitle theme={theme}>Quartos</FilterTitle>
+          <ButtonGroup theme={theme}>
             {[1, 2, 3, 4, "4+"].map((num) => (
               <Button
                 key={num}
-                variant={
-                  filters.bedrooms === num ? "primary" : "outline-primary"
-                }
+                variant={filters.bedrooms === num ? "primary" : "outline-primary"}
                 onClick={() => handleFilterSelect("bedrooms", num)}
               >
                 {num}
@@ -33,14 +31,12 @@ function MarketplacePropertyRoomFilterComp() {
           </ButtonGroup>
         </ListGroup.Item>
         <ListGroup.Item>
-          <FilterTitle>Banheiros</FilterTitle>
-          <ButtonGroup>
+          <FilterTitle theme={theme}>Banheiros</FilterTitle>
+          <ButtonGroup theme={theme}>
             {[1, 2, 3, 4, "4+"].map((num) => (
               <Button
                 key={num}
-                variant={
-                  filters.bathrooms === num ? "primary" : "outline-primary"
-                }
+                variant={filters.bathrooms === num ? "primary" : "outline-primary"}
                 onClick={() => handleFilterSelect("bathrooms", num)}
               >
                 {num}
@@ -49,14 +45,12 @@ function MarketplacePropertyRoomFilterComp() {
           </ButtonGroup>
         </ListGroup.Item>
         <ListGroup.Item>
-          <FilterTitle>Vagas</FilterTitle>
-          <ButtonGroup>
+          <FilterTitle theme={theme}>Vagas</FilterTitle>
+          <ButtonGroup theme={theme}>
             {[1, 2, 3, 4, "4+"].map((num) => (
               <Button
                 key={num}
-                variant={
-                  filters.parking === num ? "primary" : "outline-primary"
-                }
+                variant={filters.parking === num ? "primary" : "outline-primary"}
                 onClick={() => handleFilterSelect("parking", num)}
               >
                 {num}

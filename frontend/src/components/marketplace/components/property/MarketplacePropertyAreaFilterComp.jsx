@@ -17,7 +17,7 @@ function MarketplacePropertyAreaFilterComp() {
       <Card.Body>
         <h4>Área do imóvel</h4>
         <Form>
-          <AreaInputGroup>
+          <AreaInputGroup theme={theme}>
             <Form.Group>
               <h5>Mínimo</h5>
               <Form.Control

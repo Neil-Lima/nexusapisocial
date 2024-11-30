@@ -6,14 +6,14 @@ import { GradientBackground } from '@/styles/GlobalStyles';
 import { MainContainer, GallerySection } from '../styles/GalleryPhotoMainStyles';
 import { useGalleryPhoto } from '../utils/GalleryPhotoUtils';
 
-import ProfileCardComp from '@/shared/profile/ProfileCardComp';
-import MenuListComp from '@/shared/profile/MenuListComp';
+import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import MenuListComp from '@/shared/profile/components/MenuListComp';
 import GalleryPhotoActionBarComp from './GalleryPhotoActionBarComp';
 import GalleryPhotoSearchComp from './GalleryPhotoSearchComp';
 import GalleryPhotoFilterComp from './GalleryPhotoFilterComp';
 import GalleryPhotoGridComp from './GalleryPhotoGridComp';
 import GalleryPhotoModalComp from './GalleryPhotoModalComp';
-import ProfileStatsCardComp from '@/shared/profile/ProfileStatsCardComp';
+import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 
 const GalleryPhotoMainComp = () => {

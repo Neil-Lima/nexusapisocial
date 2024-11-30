@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { Card } from "react-bootstrap";
 
 export const FilterCard = styled(Card)`
-  background: ${(props) => props.theme.cardBackground};
-  border-radius: ${(props) => props.theme.borderRadius};
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border-radius: ${props => props.theme.borderRadius};
   border: none;
   margin-bottom: 24px;
-  box-shadow: ${(props) => props.theme.boxShadow};
+  box-shadow: ${props => props.theme.boxShadow};
 `;
 
 export const FilterTitle = styled.h4`
-  color: ${(props) => props.theme.textColor};
+  color: ${props => props.theme.textColor};
   margin-bottom: 1.5rem;
   text-align: center;
 `;
@@ -23,19 +23,24 @@ export const PriceInputGroup = styled.div`
 
   .form-group {
     label {
-      color: ${(props) => props.theme.textColor};
+      color: ${props => props.theme.textColor};
       margin-bottom: 0.5rem;
     }
 
     .form-control {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: ${(props) => props.theme.textColor};
+      background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+      border: none;
+      color: ${props => props.theme.textColor};
+      border-radius: ${props => props.theme.borderRadius};
 
       &:focus {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: ${(props) => props.theme.primaryColor};
-        box-shadow: none;
+        box-shadow: ${props => props.theme.boxShadow};
+        border: none;
+      }
+
+      &::placeholder {
+        color: ${props => props.theme.textColor};
+        opacity: 0.7;
       }
     }
   }

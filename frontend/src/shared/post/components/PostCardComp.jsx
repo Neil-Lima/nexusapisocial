@@ -17,8 +17,8 @@ import {
   CommentSection,
   CommentInput,
   PostDropdown
-} from './styles/PostCardStyles';
-import { usePostCard } from './utils/PostCardUtils';
+} from '../styles/PostCardStyles';
+import { usePostCard } from '../utils/PostCardUtils';
 
 function PostCardComp() {
   const { theme } = useTheme();

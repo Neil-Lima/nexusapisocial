@@ -12,9 +12,8 @@ import {
   PostInput,
   MediaButton,
   PostButton
-} from './styles/CreatePostCardStyles';
-import { useCreatePost } from './utils/CreatePostCardUtils';
-import EmojiSelectorComp from '../emoji/EmojiSelectorComp';
+} from '../styles/CreatePostCardStyles';
+import { useCreatePost } from '../utils/CreatePostCardUtils';
 
 function CreatePostComp() {
   const { theme } = useTheme();
@@ -90,13 +89,6 @@ function CreatePostComp() {
         onChange={handleMediaUpload}
         hidden
       />
-
-      {showEmojiPicker && (
-        <EmojiSelectorComp
-          onEmojiSelect={handleEmojiSelect}
-          onClose={() => setShowEmojiPicker(false)}
-        />
-      )}
     </CreatePostContainer>
   );
 }

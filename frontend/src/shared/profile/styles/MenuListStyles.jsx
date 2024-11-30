@@ -5,18 +5,18 @@ import { ListGroup } from 'react-bootstrap';
 export const StyledListGroup = styled(ListGroup)`
   margin-bottom: 1.5rem;
   border-radius: ${props => props.theme.borderRadius};
-  background: ${props => props.theme.cardBackground};
-  backdrop-filter: blur(10px);
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  box-shadow: ${props => props.theme.boxShadow};
 `;
 
 export const StyledListGroupItem = styled(ListGroup.Item)`
   background-color: transparent;
-  color: #ffffff;
+  color: ${props => props.theme.textColor};
   padding: 15px 20px;
   display: flex;
   align-items: center;
   border: none;
-  transition: all 0.3s ease;
+  transition: ${props => props.theme.transition};
   
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -38,6 +38,6 @@ export const IconWrapper = styled.div`
 
 export const MenuText = styled.span`
   font-size: 16px;
-  color: #ffffff;
+  color: ${props => props.theme.textColor};
   font-weight: 500;
 `;

@@ -16,8 +16,7 @@ import { useMarketplacePropertyList } from "../../utils/property/MarketplaceProp
 
 function MarketplacePropertyListComp() {
   const { theme } = useTheme();
-  const { properties, handleContact, handleMessage } =
-    useMarketplacePropertyList();
+  const { properties, handleContact, handleMessage, handlePropertyClick } = useMarketplacePropertyList();
 
   return (
     <ListContainer theme={theme}>
@@ -26,15 +25,21 @@ function MarketplacePropertyListComp() {
       </h5>
       <ListGroup>
         {properties.map((property) => (
-          <PropertyCard key={property.id} theme={theme}>
-            <PropertyImage>
+          <PropertyCard 
+            key={property.id} 
+            theme={theme}
+            onClick={() => handlePropertyClick(property.id)}
+            style={{ cursor: 'pointer' }}
+          >
+            <PropertyImage theme={theme}>
               <img src={property.image} alt={property.title} />
+              <span className="price">{property.price}</span>
             </PropertyImage>
-            <PropertyInfo>
+            <PropertyInfo theme={theme}>
               <h4>{property.city}</h4>
               <h6>{property.address}</h6>
               <p>{property.description}</p>
-              <PropertyFeatures>
+              <PropertyFeatures theme={theme}>
                 {property.features.map((feature, index) => (
                   <span key={index} className="feature-badge">
                     <FontAwesomeIcon icon={faStar} /> {feature}
@@ -42,10 +47,16 @@ function MarketplacePropertyListComp() {
                 ))}
               </PropertyFeatures>
               <div className="actions">
-                <button onClick={() => handleContact(property.id)}>
+                <button onClick={(e) => {
+                  e.stopPropagation();
+                  handleContact(property.id);
+                }}>
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </button>
-                <button onClick={() => handleMessage(property.id)}>
+                <button onClick={(e) => {
+                  e.stopPropagation();
+                  handleMessage(property.id);
+                }}>
                   <FontAwesomeIcon icon={faCommentDots} />
                 </button>
               </div>

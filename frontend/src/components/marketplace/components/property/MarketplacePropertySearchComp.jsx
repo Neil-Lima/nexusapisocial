@@ -24,12 +24,12 @@ function MarketplacePropertySearchComp() {
           value={searchTerm}
           onChange={(e) => handleSearchChange(e.target.value)}
         />
-        <Button variant="primary">
+        <Button>
           <FontAwesomeIcon icon={faSearch} />
         </Button>
       </InputGroup>
 
-      <BadgesContainer>
+      <BadgesContainer theme={theme}>
         {locations.map((location, index) => (
           <LocationBadge
             key={index}

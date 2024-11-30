@@ -1,9 +1,7 @@
-'use client';
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { useTheme } from '@/context/ThemeContext';
-import {StyledCard, StatValue, StatLabel} from '@/shared/profile/styles/ProfileStatsCardCompStyles';
-
+import { StyledStatsCard, StatItem } from '../styles/ProfileStatsCardCompStyles';
 
 function ProfileStatsCardComp() {
   const { theme } = useTheme();
@@ -15,18 +13,20 @@ function ProfileStatsCardComp() {
   ];
 
   return (
-    <StyledCard theme={theme}>
+    <StyledStatsCard theme={theme}>
       <Card.Body>
         <Row>
           {stats.map((stat, index) => (
             <Col key={index}>
-              <StatLabel theme={theme}>{stat.label}</StatLabel>
-              <StatValue theme={theme}>{stat.value}</StatValue>
+              <StatItem theme={theme}>
+                <span className="value">{stat.value}</span>
+                <span className="label">{stat.label}</span>
+              </StatItem>
             </Col>
           ))}
         </Row>
       </Card.Body>
-    </StyledCard>
+    </StyledStatsCard>
   );
 }
 

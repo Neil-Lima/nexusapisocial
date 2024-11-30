@@ -1,16 +1,20 @@
-'use client';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
 
 export const DocumentsContainer = styled.div`
   width: 100%;
   padding: 2rem;
-  background: ${props => props.theme.cardBackground};
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   border-radius: ${props => props.theme.borderRadius};
-  color: white;
+  color: ${props => props.theme.textColor};
 `;
 
 export const DocumentHeader = styled.div`
   margin-bottom: 2rem;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .status-overview {
     display: flex;
@@ -46,12 +50,12 @@ export const DocumentCard = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: ${props => props.theme.primaryColor};
   padding: 1.5rem;
   border-radius: ${props => props.theme.borderRadius};
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid ${props => props.selected ? props.theme.primaryColor : 'transparent'};
+  transition: ${props => props.theme.transition};
+  border: 2px solid ${props => props.selected ? props.theme.highlightColor : 'transparent'};
 
   &:hover {
     transform: translateY(-3px);
@@ -64,7 +68,7 @@ export const DocumentCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${props => props.theme.primaryColor};
+    background: ${props => props.theme.highlightColor};
     border-radius: 50%;
     font-size: 1.5rem;
   }
@@ -78,24 +82,23 @@ export const DocumentCard = styled.div`
 
     p {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
+      opacity: 0.7;
       margin-bottom: 0.5rem;
     }
   }
 
-  .actions {
-    button {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: ${props => props.theme.borderRadius};
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s ease;
+  .actions button {
+    background: ${props => props.theme.highlightColor};
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: ${props => props.theme.borderRadius};
+    color: ${props => props.theme.textColor};
+    cursor: pointer;
+    transition: ${props => props.theme.transition};
 
-      &:hover {
-        background: ${props => props.theme.primaryColor};
-      }
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: ${props => props.theme.boxShadow};
     }
   }
 `;
@@ -109,13 +112,17 @@ export const StatusBadge = styled.span`
       case 'validated': return '#4CAF50';
       case 'pending': return '#FFC107';
       case 'rejected': return '#F44336';
-      default: return 'rgba(255, 255, 255, 0.1)';
+      default: return props.theme.primaryColor;
     }
   }};
 `;
 
 export const UploadSection = styled.div`
   margin-bottom: 2rem;
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .upload-area {
     margin-top: 1rem;
@@ -124,10 +131,10 @@ export const UploadSection = styled.div`
     border-radius: ${props => props.theme.borderRadius};
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: ${props => props.theme.transition};
 
     &:hover {
-      border-color: ${props => props.theme.primaryColor};
+      border-color: ${props => props.theme.highlightColor};
     }
 
     input[type="file"] {
@@ -143,7 +150,7 @@ export const UploadSection = styled.div`
 
       .progress {
         height: 100%;
-        background: ${props => props.theme.primaryColor};
+        background: ${props => props.theme.highlightColor};
         transition: width 0.3s ease;
       }
     }
@@ -152,11 +159,14 @@ export const UploadSection = styled.div`
 
 export const DocumentPreview = styled.div`
   margin-bottom: 2rem;
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
 
   .preview-content {
     margin-top: 1rem;
     height: 400px;
-    background: rgba(255, 255, 255, 0.1);
     border-radius: ${props => props.theme.borderRadius};
     overflow: hidden;
 
@@ -172,18 +182,20 @@ export const DocumentPreview = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: ${props => props.theme.primaryColor};
     border-radius: ${props => props.theme.borderRadius};
-    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5;
   }
 `;
 
 export const ValidationSection = styled.div`
+  background: ${props => props.theme.primaryColor};
+  padding: 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
+
   .validation-status {
     margin-top: 1rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: ${props => props.theme.borderRadius};
 
     .status-info {
       margin-bottom: 1rem;
@@ -191,22 +203,21 @@ export const ValidationSection = styled.div`
 
     .feedback {
       margin-bottom: 1rem;
-
       p {
-        color: rgba(255, 255, 255, 0.7);
+        opacity: 0.7;
       }
     }
 
     .validate-btn {
       width: 100%;
       padding: 1rem;
-      background: ${props => props.theme.primaryColor};
+      background: ${props => props.theme.highlightColor};
       border: none;
       border-radius: ${props => props.theme.borderRadius};
-      color: white;
+      color: ${props => props.theme.textColor};
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: ${props => props.theme.transition};
 
       &:hover {
         transform: translateY(-2px);

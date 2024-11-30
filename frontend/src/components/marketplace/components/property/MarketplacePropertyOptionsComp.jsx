@@ -4,7 +4,6 @@ import { ListGroup } from "react-bootstrap";
 import { useTheme } from "@/context/ThemeContext";
 import {
   OptionsContainer,
-  OptionItem,
   Switch,
 } from "../../styles/property/MarketplacePropertyOptionsStyles";
 import { useMarketplacePropertyOptions } from "../../utils/property/MarketplacePropertyOptionsUtils";
@@ -18,7 +17,7 @@ function MarketplacePropertyOptionsComp() {
       <ListGroup>
         <ListGroup.Item>
           <h5>Incluir preço do condomínio</h5>
-          <Switch>
+          <Switch theme={theme}>
             <input
               type="checkbox"
               checked={options.includeCondoFee}
@@ -29,7 +28,7 @@ function MarketplacePropertyOptionsComp() {
         </ListGroup.Item>
         <ListGroup.Item>
           <h5>Financiável</h5>
-          <Switch>
+          <Switch theme={theme}>
             <input
               type="checkbox"
               checked={options.isFinanceable}

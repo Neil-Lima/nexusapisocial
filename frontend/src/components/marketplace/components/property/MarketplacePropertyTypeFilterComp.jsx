@@ -21,6 +21,7 @@ function MarketplacePropertyTypeFilterComp() {
             <TypeOption
               active={selectedType === "rent"}
               onClick={() => handleTypeChange("rent")}
+              theme={theme}
             >
               <h5>Alugar</h5>
             </TypeOption>
@@ -29,6 +30,7 @@ function MarketplacePropertyTypeFilterComp() {
             <TypeOption
               active={selectedType === "buy"}
               onClick={() => handleTypeChange("buy")}
+              theme={theme}
             >
               <h5>Vender</h5>
             </TypeOption>

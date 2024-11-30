@@ -2,9 +2,9 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconWrapper, StyledListGroup, StyledListGroupItem, MenuText } from './styles/MenuListStyles';
+import { IconWrapper, StyledListGroup, StyledListGroupItem, MenuText } from '../styles/MenuListStyles';
 import { useTheme } from '@/context/ThemeContext';
-import { menuItems } from './utils/MenuListUtils';
+import { menuItems } from '../utils/MenuListUtils';
 
 function MenuListComp() {
   const { theme } = useTheme();
@@ -15,11 +15,12 @@ function MenuListComp() {
         <StyledListGroupItem 
           key={index} 
           className="d-flex align-items-center"
+          theme={theme}
         >
           <IconWrapper theme={theme}>
             <FontAwesomeIcon icon={item.icon} style={{fontSize: '18px', color: '#ffffff'}} />
           </IconWrapper>
-          <MenuText>{item.text}</MenuText>
+          <MenuText theme={theme}>{item.text}</MenuText>
         </StyledListGroupItem>
       ))}
     </StyledListGroup>

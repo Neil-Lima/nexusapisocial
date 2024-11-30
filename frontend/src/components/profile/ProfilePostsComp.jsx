@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext';
-import CreatePostComp from '@/shared/post/CreatePostComp';
-import PostCardComp from '@/shared/post/PostCardComp';
+import CreatePostComp from '@/shared/post/components/CreatePostComp';
+import PostCardComp from '@/shared/post/components/PostCardComp';
 import LoadMoreComp from '@/shared/loadmore/LoadMoreComp';
 import { TabContent } from './styles/ProfileStyles';
 

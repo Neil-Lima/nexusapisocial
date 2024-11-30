@@ -1,163 +1,152 @@
-'use client';
-import styled from 'styled-components';
-
-export const Viewer3DContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  background: ${props => props.theme.cardBackground};
-  border-radius: ${props => props.theme.borderRadius};
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  grid-gap: 2rem;
-`;
+"use client";
+import styled from "styled-components";
 
 export const ModelContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: ${props => props.theme.borderRadius};
-  overflow: hidden;
-  position: relative;
-
-  .model-viewport {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-export const ControlPanel = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: ${props => props.theme.borderRadius};
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 2rem;
+`;
+
+export const ModelViewport = styled.div`
+  width: 100%;
+  height: 600px;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
+  position: relative;
+`;
+
+export const ControlPanel = styled.div`
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border-radius: ${props => props.theme.borderRadius};
+  padding: 1.5rem;
+  box-shadow: ${props => props.theme.boxShadow};
 `;
 
 export const ViewModeButtons = styled.div`
   display: flex;
   gap: 1rem;
+  margin-bottom: 1.5rem;
+`;
 
-  button {
-    flex: 1;
-    background: ${props => props.theme.primaryColor};
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: ${props => props.theme.borderRadius};
-    cursor: pointer;
-    transition: all 0.3s ease;
+export const ViewModeButton = styled.button`
+  background: ${props => props.active ? props.theme.highlightColor : props.theme.primaryColor};
+  color: ${props => props.theme.textColor};
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  cursor: pointer;
+  transition: ${props => props.theme.transition};
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: ${props => props.theme.boxShadow};
-    }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: ${props => props.theme.boxShadow};
   }
 `;
 
 export const MaterialSelector = styled.div`
+  margin-bottom: 1.5rem;
+
   h4 {
-    color: white;
+    color: ${props => props.theme.textColor};
     margin-bottom: 1rem;
   }
 
   select {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
     padding: 0.75rem;
+    background: ${props => props.theme.primaryColor};
+    color: ${props => props.theme.textColor};
+    border: none;
     border-radius: ${props => props.theme.borderRadius};
     cursor: pointer;
 
-    option {
-      background: ${props => props.theme.cardBackground};
+    &:focus {
+      outline: none;
+      box-shadow: ${props => props.theme.boxShadow};
     }
   }
 `;
 
 export const MeasurementTools = styled.div`
   h4 {
-    color: white;
+    color: ${props => props.theme.textColor};
     margin-bottom: 1rem;
   }
 
-  button {
-    width: 100%;
-    background: ${props => props.theme.primaryColor};
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: ${props => props.theme.borderRadius};
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: ${props => props.theme.boxShadow};
-    }
+  .measurement-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .measurements-display {
-    margin-top: 1rem;
-    color: white;
-
     .measurement-item {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.5rem;
+      background: ${props => props.theme.primaryColor};
+      padding: 0.5rem 1rem;
       border-radius: ${props => props.theme.borderRadius};
       margin-bottom: 0.5rem;
+      color: ${props => props.theme.textColor};
     }
   }
 `;
 
+export const MeasurementButton = styled.button`
+  background: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.textColor};
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  cursor: pointer;
+  transition: ${props => props.theme.transition};
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: ${props => props.theme.boxShadow};
+  }
+`;
+
 export const ViewOptions = styled.div`
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  padding: 1.5rem;
   border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
+`;
 
-  button {
-    background: ${props => props.theme.primaryColor};
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+export const ControlButton = styled.button`
+  background: ${props => props.theme.primaryColor};
+  color: ${props => props.theme.textColor};
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  cursor: pointer;
+  transition: ${props => props.theme.transition};
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: ${props => props.theme.boxShadow};
-    }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: ${props => props.theme.boxShadow};
   }
 `;
 
 export const InfoOverlay = styled.div`
   position: absolute;
-  top: 2rem;
+  bottom: 2rem;
   right: 2rem;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 1.5rem;
-  border-radius: ${props => props.theme.borderRadius};
-  color: white;
   max-width: 300px;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
+`;
+
+export const InfoContent = styled.div`
+  padding: 1.5rem;
+  color: ${props => props.theme.textColor};
 
   h3 {
-    color: ${props => props.theme.primaryColor};
     margin-bottom: 1rem;
-  }
-
-  p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
   }
 
   ul {
@@ -165,14 +154,11 @@ export const InfoOverlay = styled.div`
     padding: 0;
 
     li {
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-      &:before {
-        content: "•";
-        color: ${props => props.theme.primaryColor};
+      &:last-child {
+        border-bottom: none;
       }
     }
   }

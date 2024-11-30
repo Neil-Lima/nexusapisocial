@@ -2,20 +2,17 @@
 import styled from 'styled-components';
 
 export const CreatePostContainer = styled.div`
-  background: ${props => props.theme.cardBackground};
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   border-radius: ${props => props.theme.borderRadius};
+  padding: 20px;
   margin-bottom: 20px;
-  overflow: hidden;
   box-shadow: ${props => props.theme.boxShadow};
 `;
 
 export const CreatePostHeader = styled.div`
   display: flex;
   align-items: center;
-  padding: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
 `;
 
 export const UserAvatar = styled.img`
@@ -23,36 +20,30 @@ export const UserAvatar = styled.img`
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid ${props => props.theme.textColor};
 `;
 
 export const PostInput = styled.textarea`
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 10px;
+  border-radius: ${props => props.theme.borderRadius};
   color: ${props => props.theme.textColor};
   resize: none;
   min-height: 60px;
-  
+
   &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  &:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
   }
 `;
 
 export const CreatePostBody = styled.div`
-  padding: 15px;
+  margin-bottom: 15px;
   
   img {
     width: 100%;
     border-radius: ${props => props.theme.borderRadius};
-    margin-bottom: 15px;
   }
 `;
 
@@ -60,8 +51,6 @@ export const CreatePostFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   
   > div {
     display: flex;
@@ -76,31 +65,31 @@ export const MediaButton = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 8px 12px;
+  border-radius: ${props => props.theme.borderRadius};
   cursor: pointer;
   transition: ${props => props.theme.transition};
-  padding: 8px 12px;
-  border-radius: 20px;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
-    color: ${props => props.theme.primaryColor};
   }
 `;
 
 export const PostButton = styled.button`
-  background: ${props => props.disabled 
-    ? 'rgba(255,255,255,0.1)' 
-    : `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   padding: 8px 20px;
-  border-radius: 20px;
+  border-radius: ${props => props.theme.borderRadius};
   color: ${props => props.theme.textColor};
-  font-weight: bold;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  cursor: pointer;
   transition: ${props => props.theme.transition};
-  
+
   &:hover:not(:disabled) {
-    transform: ${props => props.theme.buttonHoverTransform};
-    box-shadow: ${props => props.theme.boxShadow};
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;

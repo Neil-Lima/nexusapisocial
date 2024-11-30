@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import EventsCardComp from './EventsCardComp';
 import EventsModalComp from './EventsModalComp';
-import ProfileCardComp from '@/shared/profile/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
 import MenuListComp from '@/shared/menu/MenuListComp';
 import { initialEvents } from './utils/EventsUtil';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';

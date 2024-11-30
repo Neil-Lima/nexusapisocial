@@ -19,7 +19,7 @@ function MarketplacePropertySortComp() {
     <SortContainer theme={theme}>
       <h5>
         Ordenar
-        <ViewToggle>
+        <ViewToggle theme={theme}>
           <FontAwesomeIcon
             icon={faGripHorizontal}
             onClick={() => handleViewChange("grid")}
