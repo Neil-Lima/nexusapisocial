@@ -53,6 +53,7 @@
     "yet-another-react-lightbox": "^3.21.6"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.8.1",
     "eslint": "^8",
     "eslint-config-next": "15.0.2",
     "postcss": "^8",
