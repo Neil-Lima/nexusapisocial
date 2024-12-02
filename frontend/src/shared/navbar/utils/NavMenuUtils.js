@@ -31,6 +31,7 @@ export const menuItems = {
         { title: 'Notificações', path: '/notifications' },
         { title: 'Amigos', path: '/friends' },
         { title: 'Eventos', path: '/events' },
+        { title: 'Comunidades', path: '/communities' },
         { title: 'Grupos', path: '/groups' },
         { title: 'Grupo Detalhe', path: '/gruposdetalhe' },
         { title: 'Noticias', path: '/' },

@@ -16,6 +16,7 @@ import NewsLatestComp from '@/shared/news/components/NewsLatestComp';
 import MessengerWindowComp from '@/shared/messenger/MessengerWindowComp';
 import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
+import ProfileVisitorsComp from '@/shared/visitors/components/ProfileVisitorsComp';
 
 export default function FeedPage() {
   const { theme } = useTheme();
@@ -32,6 +33,7 @@ export default function FeedPage() {
            <MenuListComp theme={theme} /> 
          </Col>
          <Col lg={6}>
+         <ProfileVisitorsComp />
            <StoriesComp />
            <CreatePostComp />
            <PostCardComp />
