@@ -1,3 +1,4 @@
+// EventsCardComp.jsx
 'use client';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +13,6 @@ import { useTheme } from '@/context/theme/ThemeContext';
 import {
   CardContainer,
   CardImage,
-  CardBadge,
   CardContent,
   CardTitle,
   CardInfo,
@@ -20,19 +20,64 @@ import {
   CardFooter,
   AttendeesList,
   AttendeeAvatar,
-  InterestButton
+  InterestButton,
+  ListViewContainer,
+  ListViewImage,
+  ListViewContent,
+  ListViewInfo,
+  ListViewActions
 } from '../styles/EventsCardStyles';
 import { useEventsCard } from '../utils/EventsCardUtils';
 
-export default function EventsCardComp({ event, onSelect }) {
+export default function EventsCardComp({ event, onSelect, viewMode }) {
   const { theme } = useTheme();
   const { handleInterest } = useEventsCard();
+
+  if (viewMode === 'list') {
+    return (
+      <ListViewContainer theme={theme} onClick={() => onSelect(event)}>
+        <ListViewImage theme={theme}>
+          <img src={event.image} alt={event.title} />
+        </ListViewImage>
+        
+        <ListViewContent>
+          <CardTitle theme={theme}>{event.title}</CardTitle>
+          <ListViewInfo>
+            <CardInfoItem>
+              <FontAwesomeIcon icon={faCalendarAlt} />
+              <span>{event.date}</span>
+            </CardInfoItem>
+            <CardInfoItem>
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <span>{event.location}</span>
+            </CardInfoItem>
+          </ListViewInfo>
+        </ListViewContent>
+
+        <ListViewActions>
+          <CardInfoItem>
+            <FontAwesomeIcon icon={faUsers} />
+            <span>{event.attendees}</span>
+          </CardInfoItem>
+          <InterestButton 
+            onClick={(e) => {
+              e.stopPropagation();
+              handleInterest(event.id);
+            }}
+            theme={theme}
+            listView
+          >
+            <FontAwesomeIcon icon={faHeart} />
+          </InterestButton>
+        </ListViewActions>
+      </ListViewContainer>
+    );
+  }
 
   return (
     <CardContainer theme={theme} onClick={() => onSelect(event)}>
       <CardImage>
         <img src={event.image} alt={event.title} />
-        {event.isOnline && <CardBadge>Online</CardBadge>}
       </CardImage>
       
       <CardContent>
@@ -41,26 +86,24 @@ export default function EventsCardComp({ event, onSelect }) {
         <CardInfo>
           <CardInfoItem>
             <FontAwesomeIcon icon={faCalendarAlt} />
-            {event.date}
+            <span>{event.date}</span>
           </CardInfoItem>
           <CardInfoItem>
             <FontAwesomeIcon icon={faClock} />
-            {event.time}
+            <span>{event.time}</span>
           </CardInfoItem>
           <CardInfoItem>
             <FontAwesomeIcon icon={faMapMarkerAlt} />
-            {event.location}
+            <span>{event.location}</span>
           </CardInfoItem>
         </CardInfo>
 
         <CardFooter>
           <AttendeesList>
-            {event.attendees > 0 && (
-              <>
-                <AttendeeAvatar>+{event.attendees}</AttendeeAvatar>
-                <span>participantes</span>
-              </>
-            )}
+            <AttendeeAvatar theme={theme}>
+              {event.attendees}
+            </AttendeeAvatar>
+            <span>participantes</span>
           </AttendeesList>
           
           <InterestButton 
@@ -71,7 +114,7 @@ export default function EventsCardComp({ event, onSelect }) {
             theme={theme}
           >
             <FontAwesomeIcon icon={faHeart} />
-            Interessado
+            <span>Interessado</span>
           </InterestButton>
         </CardFooter>
       </CardContent>

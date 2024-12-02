@@ -35,18 +35,21 @@ export default function EventsMainComp() {
             <ProfileStatsCardComp />
             <MenuListComp />
           </Col>
-          <Col lg={9}>
+          <Col lg={6}>
             <EventsHeaderComp />
             <EventsTabsComp 
               activeTab={activeTab}
               onTabChange={handleTabChange}
             />
             <ContentArea theme={theme}>
-              <EventsFilterComp />
+              
               <EventsGridComp 
                 onEventSelect={handleEventSelect}
               />
             </ContentArea>
+          </Col>
+          <Col lg={3}>
+          <EventsFilterComp />
           </Col>
         </Row>
       </Container>

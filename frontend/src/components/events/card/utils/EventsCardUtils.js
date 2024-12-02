@@ -1,19 +1,20 @@
+// EventsCardUtils.js
 'use client';
 import { useState } from 'react';
 
 export const useEventsCard = () => {
-  const [interested, setInterested] = useState([]);
+  const [interestedEvents, setInterestedEvents] = useState([]);
 
   const handleInterest = (eventId) => {
-    setInterested(prev => 
-      prev.includes(eventId)
-        ? prev.filter(id => id !== eventId)
-        : [...prev, eventId]
-    );
+    setInterestedEvents(prev => {
+      if (prev.includes(eventId)) {
+        return prev.filter(id => id !== eventId);
+      }
+      return [...prev, eventId];
+    });
   };
 
   return {
-    interested,
     handleInterest
   };
 };
