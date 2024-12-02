@@ -1,12 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/theme/ThemeContext';
 import { GradientBackground } from '../../components/profileuser/styles/ProfileuserStyle';
-import { ProfileuserHeaderComp } from '../../components/profileuser/ProfileuserHeaderComp';
-import { ProfileuserNavigationComp } from '../../components/profileuser/ProfileuserNavigationComp';
-import { ProfileuserStatisticsComp } from '../../components/profileuser/ProfileuserStatisticsComp';
-import { ProfileuserInterestsComp } from '../../components/profileuser/ProfileuserInterestsComp';
+import { ProfileuserHeaderComp } from '../../components/profileuser/components/ProfileuserHeaderComp';
+import { ProfileuserNavigationComp } from '../../components/profileuser/components/ProfileuserNavigationComp';
+import { ProfileuserStatisticsComp } from '../../components/profileuser/components/ProfileuserStatisticsComp';
+import { ProfileuserInterestsComp } from '../../components/profileuser/components/ProfileuserInterestsComp';
 import { initialPosts } from '../../components/profileuser/utils/ProfileuserUtils';
 import MessengerWindowComp from '@/shared/messenger/MessengerWindowComp';
 

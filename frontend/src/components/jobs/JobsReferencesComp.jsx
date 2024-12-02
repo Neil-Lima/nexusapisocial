@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { ReferencesCard, ReferenceItem } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie, faBuilding, faStar, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';

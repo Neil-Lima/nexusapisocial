@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { MainContainer, ContentArea } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 

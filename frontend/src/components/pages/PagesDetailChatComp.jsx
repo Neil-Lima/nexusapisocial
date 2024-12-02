@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Form, InputGroup, Modal } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { ChatWindow, StyledButton } from './styles/PagesStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';

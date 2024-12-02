@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { ChatContainer, ChatMessages, MessageBubble } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faSmile } from '@fortawesome/free-solid-svg-icons';

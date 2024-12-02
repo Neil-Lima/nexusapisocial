@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { SkillsCard, SkillCategory, SkillItem } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faTools, faBrain, faUsers, faPlus } from '@fortawesome/free-solid-svg-icons';

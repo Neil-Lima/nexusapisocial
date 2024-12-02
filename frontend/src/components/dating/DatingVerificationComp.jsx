@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { useDating } from './utils/DatingUtils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCamera, faShield } from '@fortawesome/free-solid-svg-icons';

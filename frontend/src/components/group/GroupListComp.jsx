@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { StyledCard, StyledButton } from './styles/GroupStyles';
 import GroupCardComp from './GroupCardComp';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 
 function GroupListComp({ 
   showModal, 

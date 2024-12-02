@@ -1,7 +1,17 @@
-'use client';
-import React from 'react';
-import EventsMainComp from '@/components/events/EventsMainComp';
+"use client";
+import React from "react";
+import EventsMainComp from "@/components/events/main/components/EventsMainComp";
+import { useTheme } from "@/context/theme/ThemeContext";
+import { GradientBackground } from "@/styles/GlobalStyles";
+import NavMenuComp from "@/shared/navbar/NavMenuComp";
 
 export default function EventsPage() {
-  return <EventsMainComp />;
+  const { theme } = useTheme();
+
+  return (
+    <>
+      <NavMenuComp />
+      <EventsMainComp />
+    </>
+  );
 }

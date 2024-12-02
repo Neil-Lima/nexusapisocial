@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { CalendarCard, CalendarEvent } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo, faBuilding, faUser, faCode } from '@fortawesome/free-solid-svg-icons';

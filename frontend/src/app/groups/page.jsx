@@ -1,13 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import { GradientBackground } from "@/components/group/styles/GroupStyles";
 import GroupListComp from "@/components/group/GroupListComp";
 import GroupModalComp from "@/components/group/GroupModalComp";
 import GroupSidebarComp from "@/components/group/GroupSidebarComp";
 import { useGroupForm } from "@/components/group/utils/GroupUtils";
 import NavMenuComp from "@/shared/navbar/NavMenuComp";
+import ProfileCardComp from "@/shared/profile/components/ProfileCardComp";
+import ProfileStatsCardComp from "@/shared/profile/components/ProfileStatsCardComp";
+import MenuListComp from "@/shared/profile/components/MenuListComp";
 
 export default function GroupPage() {
   const { theme } = useTheme();
@@ -17,15 +20,13 @@ export default function GroupPage() {
   return (
     <>    
        <NavMenuComp />
-      <GradientBackground theme={theme}>
-     
+      <GradientBackground theme={theme}>     
         <Container>
           <Row>
             <Col lg={3}>
-              <GroupSidebarComp
-                show={showSidebar}
-                onHide={() => setShowSidebar(false)}
-              />
+             <ProfileCardComp/>
+             <ProfileStatsCardComp/>
+             <MenuListComp/>
             </Col>
             <Col lg={9}>
               <GroupListComp

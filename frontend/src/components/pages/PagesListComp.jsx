@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GridView, ListView } from './styles/PagesStyle';
 import PagesGridCardComp from './PagesGridCardComp';
 import PagesListCardComp from './PagesListCardComp';

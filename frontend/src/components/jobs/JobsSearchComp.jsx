@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { InputGroup, Form } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { SearchContainer, SearchInput } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faMapMarker } from '@fortawesome/free-solid-svg-icons';

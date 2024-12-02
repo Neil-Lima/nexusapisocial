@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faGlobeAmericas, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { MenuContainer, MenuItem, IconWrapper } from './styles/MenuListStyles';
 import { useMenuList } from './utils/MenuListUtils';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 
 function MenuListComp() {
   const { theme } = useTheme();

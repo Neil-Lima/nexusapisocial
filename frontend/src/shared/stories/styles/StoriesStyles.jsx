@@ -1,184 +1,146 @@
 'use client';
 import styled from 'styled-components';
 
-export const StoryContainer = styled.div`
+export const StoriesContainer = styled.div`
+  margin-bottom: 20px;
+  position: relative;
+
+  .card {
+    background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+    border-radius: ${props => props.theme.borderRadius};
+    border: none;
+    box-shadow: ${props => props.theme.boxShadow};
+    color: ${props => props.theme.textColor};
+  }
+
+  .card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    h5 {
+      margin: 0;
+      color: ${props => props.theme.textColor};
+    }
+  }
+
+  .card-body {
+    padding: 1rem;
+    position: relative;
+  }
+`;
+
+export const StoriesWrapper = styled.div`
   display: flex;
-  overflow-x: auto;
   gap: 10px;
-  padding: 10px;
+  overflow-x: hidden;
+  padding: 10px 0;
+  position: relative;
   scroll-behavior: smooth;
+
   &::-webkit-scrollbar {
     display: none;
   }
 `;
 
 export const StoryItem = styled.div`
-  position: relative;
   min-width: 120px;
   height: 200px;
-  border-radius: 15px;
+  border-radius: ${props => props.theme.borderRadius};
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 
   &:hover {
     transform: scale(1.05);
   }
 
-  img {
+  .story-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 `;
 
-export const StoryOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 15px;
+export const StoryContent = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 `;
 
-export const StoryUserInfo = styled.div`
+export const StoryUser = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
 
-  img {
+  .user-avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid ${props => props.theme.primaryColor};
+    border: 3px solid ${props => props.theme.primaryColor};
+    margin-bottom: 5px;
   }
 
   span {
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
+    color: ${props => props.theme.textColor};
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 `;
 
-export const StoryTime = styled.span`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 12px;
+export const CreateStory = styled(StoryItem)`
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .create-story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: ${props => props.theme.textColor};
+    gap: 10px;
+
+    svg {
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const NavigationButton = styled.button`
   position: absolute;
   top: 50%;
+  ${props => props.direction === 'left' ? 'left: 10px;' : 'right: 10px;'};
   transform: translateY(-50%);
-  ${props => props.direction === 'left' ? 'left: 0;' : 'right: 0;'}
-  z-index: 1;
-  background: ${props => props.theme.primaryColor};
-  border: none;
-  border-radius: 50%;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  border: none;
+  color: ${props => props.theme.textColor};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   cursor: pointer;
-  opacity: ${props => props.disabled ? '0.5' : '1'};
-  
-  &:hover:not(:disabled) {
-    background: ${props => props.theme.secondaryColor};
-  }
-`;
-
-export const StoryModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const StoryModalContent = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  height: 80vh;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #000;
-`;
-
-export const StoryProgressBar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: ${props => props.theme.primaryColor};
-  width: ${props => props.progress}%;
-  transition: width 0.1s linear;
-`;
-
-export const StoryHeader = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-`;
-
-export const StoryFooter = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-`;
-
-export const StoryControls = styled.div`
-  display: flex;
-  gap: 15px;
-  
-  button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-`;
-
-export const CreateStoryButton = styled(StoryItem)`
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: white;
-  border: 2px dashed rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  z-index: 10;
 
   &:hover {
-    border-color: ${props => props.theme.primaryColor};
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: ${props => props.theme.boxShadow};
   }
 `;

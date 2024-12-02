@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Badge } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { JobCard, JobHeader, CompanyLogo, JobInfo } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faClock, faDollarSign, faBookmark } from '@fortawesome/free-solid-svg-icons';

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Badge } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { CandidateCard, CandidateItem } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faComment, faCheck } from '@fortawesome/free-solid-svg-icons';

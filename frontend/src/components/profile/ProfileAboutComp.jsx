@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { InfoCard, SkillTag, TimelineItem } from './styles/ProfileStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faGlobe, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';

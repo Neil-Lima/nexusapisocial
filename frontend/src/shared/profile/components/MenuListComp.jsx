@@ -3,7 +3,7 @@ import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconWrapper, StyledListGroup, StyledListGroupItem, MenuText } from '../styles/MenuListStyles';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { menuItems } from '../utils/MenuListUtils';
 
 function MenuListComp() {

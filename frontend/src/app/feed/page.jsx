@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground, GradientText, IconWrapper } from '@/styles/GlobalStyles';
 
 // Componentes Globais
@@ -11,8 +11,8 @@ import StoriesComp from '@/shared/stories/StoriesComp';
 import CreatePostComp from '@/shared/post/components/CreatePostComp';
 import PostCardComp from '@/shared/post/components/PostCardComp';
 import LoadMoreComp from '@/shared/loadmore/LoadMoreComp';
-import SuggestionsFriendComp from '@/shared/suggestions/SuggestionsFriendComp';
-import NewsLatestComp from '@/shared/news/NewsLatestComp';
+import SuggestionsFriendComp from '@/shared/suggestions/components/SuggestionsFriendComp';
+import NewsLatestComp from '@/shared/news/components/NewsLatestComp';
 import MessengerWindowComp from '@/shared/messenger/MessengerWindowComp';
 import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';

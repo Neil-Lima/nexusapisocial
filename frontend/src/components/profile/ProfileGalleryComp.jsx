@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { TabContent } from './styles/ProfileStyles';
 import GalleryPhotoGridComp from '@/shared/gallery/photos/components/GalleryPhotoGridComp';
 import GalleryVideoGridComp from '@/shared/gallery/videos/grid/GalleryVideoGridComp';

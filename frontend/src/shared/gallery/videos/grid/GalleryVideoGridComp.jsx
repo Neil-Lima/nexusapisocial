@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faEye, faClock, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { VideoGrid, VideoItem, VideoOverlay, VideoInfo, VideoStats, UserInfo, StudioButton } from '../styles/GalleryVideoStyles';

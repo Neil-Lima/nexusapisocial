@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { WorkflowCard, WorkflowStep, StepConnector } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faUserCheck, faCode, faComments, faHandshake } from '@fortawesome/free-solid-svg-icons';

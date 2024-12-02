@@ -10,7 +10,7 @@ import {
   faShoppingCart,
   faTag,
 } from "@fortawesome/free-solid-svg-icons";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import {
   SidebarContainer,
   UserSection,

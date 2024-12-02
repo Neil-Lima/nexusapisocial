@@ -1,10 +1,10 @@
 'use client'
 import React from 'react';
-import { ProfileuserPostsComp } from '../ProfileuserPostsComp';
-import { ProfileuserAboutComp } from '../ProfileuserAboutComp';
-import { ProfileuserFriendsComp } from '../ProfileuserFriendsComp';
-import { ProfileuserPhotosComp } from '../ProfileuserPhotosComp';
-import { ProfileuserVideosComp } from '../ProfileuserVideosComp';
+import { ProfileuserPostsComp } from '../components/ProfileuserPostsComp';
+import { ProfileuserAboutComp } from '../components/ProfileuserAboutComp';
+import { ProfileuserFriendsComp } from '../components/ProfileuserFriendsComp';
+import { ProfileuserPhotosComp } from '../components/ProfileuserPhotosComp';
+import { ProfileuserVideosComp } from '../components/ProfileuserVideosComp';
 
 export const initialPosts = [
   { id: 1, user: 'John Doe', userImage: 'https://picsum.photos/50/50?random=1', content: 'Just had an amazing day at the beach! 🏖️', image: 'https://picsum.photos/400/300?random=1', likes: 150, comments: 45, shares: 20 },

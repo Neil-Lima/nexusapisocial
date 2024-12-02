@@ -1,62 +1,69 @@
 'use client';
 import styled from 'styled-components';
+import { ListGroup } from 'react-bootstrap';
 
 export const SuggestionsContainer = styled.div`
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 15px;
-  overflow: hidden;
   margin-bottom: 20px;
-`;
 
-export const SuggestionsHeader = styled.div`
-  padding: 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  
-  h5 {
-    margin: 0;
-    color: #ffffff;
+  .card {
+    background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+    border-radius: ${props => props.theme.borderRadius};
+    border: none;
+    box-shadow: ${props => props.theme.boxShadow};
+    color: ${props => props.theme.textColor};
+  }
+
+  .card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    h5 {
+      margin: 0;
+      color: ${props => props.theme.textColor};
+    }
+  }
+
+  .list-group {
+    background: transparent;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
   }
 `;
 
-export const SuggestionsList = styled.div`
+export const SuggestionItem = styled(ListGroup.Item)`
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 15px;
-`;
-
-export const SuggestionItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px;
   transition: all 0.3s ease;
-  
-  &:hover {
-    background: rgba(255,255,255,0.1);
-  }
-  
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-`;
 
-export const UserAvatar = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 export const UserInfo = styled.div`
   flex: 1;
-  
+
   h6 {
     margin: 0;
-    color: #ffffff;
+    color: ${props => props.theme.textColor};
+    font-weight: 500;
   }
-  
+
   small {
-    color: rgba(255,255,255,0.7);
+    color: ${props => props.theme.textColor};
+    opacity: 0.7;
   }
 `;
 
@@ -65,28 +72,20 @@ export const ActionButtons = styled.div`
   gap: 10px;
 `;
 
-export const AddButton = styled.button`
-  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+export const ActionButton = styled.button`
+  background: ${props => props.danger ? 'rgba(255, 59, 48, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
   border: none;
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  color: ${props => props.theme.textColor};
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.1);
-  }
-`;
-
-export const IgnoreButton = styled(AddButton)`
-  background: rgba(255,255,255,0.1);
-  
-  &:hover {
-    background: rgba(255,0,0,0.2);
+    background: ${props => props.danger ? 'rgba(255, 59, 48, 0.3)' : 'rgba(255, 255, 255, 0.2)'};
   }
 `;

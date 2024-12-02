@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { EmployerCard, MetricBox, ActivityFeed } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faFileAlt, faCheckCircle, faChartLine } from '@fortawesome/free-solid-svg-icons';

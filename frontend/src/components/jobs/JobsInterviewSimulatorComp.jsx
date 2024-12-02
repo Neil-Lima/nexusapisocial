@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { SimulatorCard, QuestionCard, ResponseArea } from './styles/JobsStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone, faVideo, faPause, faRedo } from '@fortawesome/free-solid-svg-icons';

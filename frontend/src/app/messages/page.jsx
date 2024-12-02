@@ -1,11 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/components/messages/styles/MessagesStyle';
-import MessagesContactListComp from '@/components/messages/MessagesContactListComp';
-import MessagesConversationComp from '@/components/messages/MessagesConversationComp';
-import MessagesVideoCallComp from '@/components/messages/MessagesVideoCallComp';
+import MessagesContactListComp from '@/components/messages/components/MessagesContactListComp';
+import MessagesConversationComp from '@/components/messages/components/MessagesConversationComp';
+import MessagesVideoCallComp from '@/components/messages/components/MessagesVideoCallComp';
 import { fetchContacts, fetchMessages } from '@/components/messages/utils/MessagesUtils';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 

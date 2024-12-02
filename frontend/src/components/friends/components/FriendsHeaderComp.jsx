@@ -11,7 +11,7 @@ import {
   MenuButton 
 } from '../styles/FriendsHeaderStyles';
 import { headerConfig, useHeaderActions } from '../utils/FriendsHeaderUtils';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 
 function FriendsHeaderComp() {
   const { theme } = useTheme();

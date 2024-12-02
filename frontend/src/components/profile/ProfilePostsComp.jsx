@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import CreatePostComp from '@/shared/post/components/CreatePostComp';
 import PostCardComp from '@/shared/post/components/PostCardComp';
 import LoadMoreComp from '@/shared/loadmore/LoadMoreComp';

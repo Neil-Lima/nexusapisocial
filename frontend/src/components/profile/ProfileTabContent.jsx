@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import ProfileAboutComp from './ProfileAboutComp';
 import ProfilePostsComp from './ProfilePostsComp';
 import ProfileGalleryComp from './ProfileGalleryComp';

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { PaginationContainer, PageButton } from './styles/SalesStyle';
 
 export default function SalesPaginationComp({ currentPage = 1, totalPages = 1, onPageChange }) {

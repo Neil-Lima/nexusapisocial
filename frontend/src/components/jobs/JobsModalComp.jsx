@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Modal, Form } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { StyledModal, StyledButton } from './styles/JobsStyles';
 
 export default function JobsModalComp({ show, onHide }) {

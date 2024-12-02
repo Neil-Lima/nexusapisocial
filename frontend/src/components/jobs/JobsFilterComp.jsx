@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { FilterCard, FilterSection } from './styles/JobsStyles';
 
 export default function JobsFilterComp() {

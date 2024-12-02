@@ -1,5 +1,5 @@
 'use client';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import React from 'react';
 import { ChromePicker } from 'react-color';
 import styled from 'styled-components';
