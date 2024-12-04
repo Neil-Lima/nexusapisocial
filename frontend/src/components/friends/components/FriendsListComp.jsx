@@ -3,7 +3,7 @@ import React from 'react';
 import { Row, Col, Pagination } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faUserPlus, faTrash, faEye } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { 
   FriendCard, 
   FriendImage, 

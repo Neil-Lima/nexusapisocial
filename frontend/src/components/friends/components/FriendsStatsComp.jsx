@@ -14,7 +14,7 @@ import {
   StatsTitle
 } from '../styles/FriendsStatsStyles';
 import { statsConfig, useStats } from '../utils/FriendsStatsUtils';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 function FriendsStatsComp() {
   const { theme } = useTheme();

@@ -2,7 +2,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarPlus, faUserFriends } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { useEventsHeader } from '../utils/EventsHeaderUtils';
 import {
   HeaderContainer,

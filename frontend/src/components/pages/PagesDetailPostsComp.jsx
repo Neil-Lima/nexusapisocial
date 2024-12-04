@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import CreatePostComp from '@/shared/post/components/CreatePostComp';
 import PostCardComp from '@/shared/post/components/PostCardComp';
 import { usePostCard } from '@/shared/post/utils/PostCardUtils';

@@ -5,7 +5,7 @@ import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap, faChartLine, faCalculator, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import JobsInterviewPrepComp from '../../interview-prep/component/JobsInterviewPrepComp';
 import JobsSkillAssessmentComp from '../../skill-assessment/component/JobsSkillAssessmentComp';
 import JobsSalaryCalculatorComp from '../../salary-calculator/component/JobsSalaryCalculatorComp';

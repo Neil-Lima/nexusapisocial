@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { GradientBackground } from '@/components/group/styles/GroupStyles';
 import GroupDetailHeaderComp from '@/components/group/GroupDetailHeaderComp';
 import GroupDetailNavComp from '@/components/group/GroupDetailNavComp';

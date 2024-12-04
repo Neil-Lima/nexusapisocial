@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import { Modal } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faGlobe, faLock, faUsers, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { 

@@ -4,7 +4,7 @@ import { Card, Badge } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faUserPlus, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { StyledCard, StyledButton } from './styles/GroupStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 function GroupCardComp({ group }) {
   const { theme } = useTheme();

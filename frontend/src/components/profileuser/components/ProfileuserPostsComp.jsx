@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Card, Form, Image } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImages, faVideo, faHeart, faComment, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { StyledCard, StyledButton, PostCard, PostImage, ActionButton } from '../styles/ProfileuserStyle';

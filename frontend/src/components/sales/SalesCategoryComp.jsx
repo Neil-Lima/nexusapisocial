@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { CategoryContainer, CategoryItem } from './styles/SalesStyle';
 import { categories } from './utils/SalesUtils';
 

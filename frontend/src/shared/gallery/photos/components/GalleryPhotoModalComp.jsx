@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Modal, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { StyledModal, PhotoSection, InfoSection, ActionButton } from '../styles/GalleryPhotoModalStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faComment, faShare } from '@fortawesome/free-solid-svg-icons';

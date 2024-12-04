@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faReply } from '@fortawesome/free-solid-svg-icons';
 import { CommentItem, CommentHeader, CommentActions, ReplySection } from '../styles/GalleryVideoStyles';

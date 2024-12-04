@@ -81,3 +81,7 @@ MELHORIAS PLATAFORMA SOCIAL
 • Controle granular de privacidade
 • Sistema anti-assédio
 • Backup automático de dados
+
+
+
+

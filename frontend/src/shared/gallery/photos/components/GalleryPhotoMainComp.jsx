@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { GradientBackground } from '@/styles/GlobalStyles';
 import { MainContainer, GallerySection } from '../styles/GalleryPhotoMainStyles';
 import { useGalleryPhoto } from '../utils/GalleryPhotoUtils';

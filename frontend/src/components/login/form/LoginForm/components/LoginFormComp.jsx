@@ -3,8 +3,8 @@
 import React from 'react';
 import { Card, Form } from 'react-bootstrap';
 import { RiLoginBoxLine, RiMailLine, RiLockPasswordLine } from 'react-icons/ri';
-import { StyledCard, StyledButton, GradientText, StyledFormControl } from './styles/LoginStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { StyledCard, StyledButton, GradientText, StyledFormControl } from '../styles/LoginFormStyles';
+import { useTheme } from '@/context/ThemeContext';
 
 function LoginFormComp({ handleLoginSubmit, handleModalShow }) {
   const { theme } = useTheme();

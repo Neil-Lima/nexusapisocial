@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar, Nav, Container, Form, InputGroup, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSunRain, faSearch, faBell, faCog, faPalette, faFile, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import ColorPickerComp from '@/styles/ColorPickerComp';
 import { StyledNavbar, StyledNavLink, StyledNavDropdown, NavItemWrapper, StyledButton, SearchInput } from './styles/NavMenuStyles';
 import { useNavMenu, menuItems, iconMapping, handleColorPickerToggle } from './utils/NavMenuUtils';

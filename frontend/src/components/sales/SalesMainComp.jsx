@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import SalesHeaderComp from './SalesHeaderComp';
 import SalesSearchComp from './SalesSearchComp';
 import SalesFilterComp from './SalesFilterComp';

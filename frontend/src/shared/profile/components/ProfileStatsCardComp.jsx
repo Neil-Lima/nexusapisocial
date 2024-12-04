@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { StyledStatsCard, StatItem } from '../styles/ProfileStatsCardCompStyles';
 
 function ProfileStatsCardComp() {

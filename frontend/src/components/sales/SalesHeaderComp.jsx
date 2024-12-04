@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { HeaderContainer, HeaderTitle, HeaderActions } from './styles/SalesStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';

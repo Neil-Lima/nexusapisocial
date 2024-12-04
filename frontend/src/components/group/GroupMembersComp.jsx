@@ -4,7 +4,7 @@ import { Badge, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { Member, StyledButton } from './styles/GroupStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 function GroupMembersComp({ admins, moderators, members }) {
   const { theme } = useTheme();

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, Row, Col, Badge } from 'react-bootstrap';
 import Image from 'next/image';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { 
   StyledCard, 
   StyledButton, 

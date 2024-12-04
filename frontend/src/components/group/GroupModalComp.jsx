@@ -2,7 +2,7 @@
 import React from 'react';
 import { Modal, Form } from 'react-bootstrap';
 import { StyledModal, StyledButton, StyledFormControl } from './styles/GroupStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 function GroupModalComp({
   showModal,

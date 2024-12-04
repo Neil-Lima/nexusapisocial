@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { TabContent, ConnectionCard, Grid } from './styles/ProfileStyles';
 import SuggestionsFriendComp from '@/shared/suggestions/components/SuggestionsFriendComp';
 

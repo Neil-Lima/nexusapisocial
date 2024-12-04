@@ -7,7 +7,7 @@ import {
   faMapMarkerAlt, 
   faTag 
 } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { useEventsFilter } from '../utils/EventsFilterUtils';
 import {
   FilterContainer,

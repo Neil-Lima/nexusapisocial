@@ -12,7 +12,7 @@ import {
   faComment,
   faShare
 } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import CommunitiesMembersComp from '../../members/components/CommunitiesMembersComp';
 import CommunitiesForumComp from '../../forum/components/CommunitiesForumComp';
 import CommunitiesPollComp from '../../poll/components/CommunitiesPollComp';

@@ -4,7 +4,7 @@ import { CommentsContainer, CommentInput, CommentList } from '../styles/GalleryP
 import { useGalleryPhotoComments } from '../utils/GalleryPhotoCommentsUtils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 const GalleryPhotoCommentsComp = ({ photoId }) => {
   const { theme } = useTheme();

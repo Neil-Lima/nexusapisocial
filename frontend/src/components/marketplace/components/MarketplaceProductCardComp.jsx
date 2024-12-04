@@ -8,7 +8,7 @@ import {
   faShare,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import { useTheme } from "@/context/theme/ThemeContext";
+import { useTheme } from "@/context/ThemeContext";
 import {
   ProductCard,
   ImageContainer,

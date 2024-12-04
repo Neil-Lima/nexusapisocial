@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { NewsContainer, NewsItem, NewsTitle, NewsDate } from '../styles/NewsStyles';
 
 function NewsLatestComp() {

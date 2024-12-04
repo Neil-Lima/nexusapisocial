@@ -2,7 +2,7 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import {
     NavigationContainer,
     NavigationItem,

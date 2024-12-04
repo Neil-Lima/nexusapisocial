@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { ThemeProvider } from '@/context/theme/ThemeContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 import MarketplaceMainComp from '@/components/marketplace/components/MarketplaceMainComp';
 
 function MarketplacePage() {

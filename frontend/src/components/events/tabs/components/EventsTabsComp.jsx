@@ -9,7 +9,7 @@ import {
   faUsers, 
   faHeart 
 } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { useEventsTabs } from '../utils/EventsTabsUtils';
 import {
   TabsContainer,

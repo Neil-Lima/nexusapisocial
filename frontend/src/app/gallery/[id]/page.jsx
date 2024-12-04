@@ -2,7 +2,7 @@
 'use client';
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { GradientBackground } from '@/components/group/styles/GroupStyles';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 import GalleryPhotoModalComp from '@/shared/gallery/photos/components/GalleryPhotoModalComp';

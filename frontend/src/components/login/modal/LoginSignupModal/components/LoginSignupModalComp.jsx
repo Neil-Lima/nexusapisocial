@@ -3,9 +3,9 @@
 import React from 'react';
 import { Modal, Container, Form, Row, Col } from 'react-bootstrap';
 import { RiUserLine, RiMailLine, RiLockPasswordLine } from 'react-icons/ri';
-import { StyledModal, StyledButton, GradientText, StyledFormControl, StyledFormLabel, StyledFormSelect } from './styles/LoginStyles';
-import LoginImageUploadComp from './LoginImageUploadComp';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { StyledModal, StyledButton, GradientText, StyledFormControl, StyledFormLabel, StyledFormSelect } from '../styles/LoginSignupModalStyles';
+import { useTheme } from '@/context/ThemeContext';
+import LoginImageUploadComp from '@/components/login/image/LoginImageUpload/components/LoginImageUploadComp';
 
 function LoginSignupModalComp({ 
   showModal, 
@@ -61,7 +61,6 @@ function LoginSignupModalComp({
                 </Form.Group>
               </Col>
             </Row>
-            {/* Resto dos campos do formulário */}
             <Row>
               <Col md={4}>
                 <Form.Group className="mb-3">

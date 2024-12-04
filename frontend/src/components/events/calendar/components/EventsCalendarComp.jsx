@@ -3,7 +3,7 @@ import React from 'react';
 import Calendar from 'react-calendar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { useEventsCalendar } from '../utils/EventsCalendarUtils';
 import {
   CalendarContainer,

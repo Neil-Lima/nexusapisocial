@@ -9,7 +9,7 @@ import {
   TagsContainer 
 } from '../styles/FriendsFilterStyles';
 import { defaultCategories, useFilterCategories } from '../utils/FriendsFilterUtils';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 function FriendsFilterComp({ onCategoryChange }) {
   const { theme } = useTheme();

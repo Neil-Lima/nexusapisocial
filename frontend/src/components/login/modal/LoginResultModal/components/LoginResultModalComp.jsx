@@ -2,10 +2,11 @@
 
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { StyledResultModal } from '../styles/LoginResultModalStyles';
 
 function LoginResultModalComp({ showResultModal, setShowResultModal, resultModalContent }) {
   return (
-    <Modal show={showResultModal} onHide={() => setShowResultModal(false)}>
+    <StyledResultModal show={showResultModal} onHide={() => setShowResultModal(false)}>
       <Modal.Header closeButton>
         <Modal.Title>{resultModalContent.title}</Modal.Title>
       </Modal.Header>
@@ -15,7 +16,7 @@ function LoginResultModalComp({ showResultModal, setShowResultModal, resultModal
           Fechar
         </Button>
       </Modal.Footer>
-    </Modal>
+    </StyledResultModal>
   );
 }
 

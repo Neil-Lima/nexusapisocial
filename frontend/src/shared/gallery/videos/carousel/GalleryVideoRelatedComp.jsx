@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { Carousel } from 'react-bootstrap';
 import { RelatedVideosContainer, RelatedVideoItem } from '../styles/GalleryVideoStyles';
 

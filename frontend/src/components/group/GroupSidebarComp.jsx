@@ -4,7 +4,7 @@ import { ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faGlobeAmericas, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { IconWrapper, SidebarWrapper } from './styles/GroupStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
 
 function GroupSidebarComp({ show, onHide }) {

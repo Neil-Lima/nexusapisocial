@@ -2,7 +2,7 @@
 import React from 'react';
 import SalesMainComp from '@/components/sales/SalesMainComp';
 import { GradientBackground } from '@/styles/GlobalStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function SalesPage() {
   const { theme } = useTheme();

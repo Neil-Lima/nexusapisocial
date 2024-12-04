@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { TabContent, AchievementCard, Grid } from './styles/ProfileStyles';
 
 const ProfileAchievementsComp = ({ achievements }) => {

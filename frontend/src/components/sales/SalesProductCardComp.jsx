@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { ProductCard, ProductImage, ProductInfo } from './styles/SalesStyle';
 import Link from 'next/link';
 

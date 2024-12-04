@@ -8,7 +8,7 @@ import {
   faTruck,
   faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
-import { useTheme } from "@/context/theme/ThemeContext";
+import { useTheme } from "@/context/ThemeContext";
 import {
   FilterContainer,
   FilterSection,

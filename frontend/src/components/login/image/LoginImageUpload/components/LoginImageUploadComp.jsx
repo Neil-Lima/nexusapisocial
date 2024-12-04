@@ -3,8 +3,8 @@
 import React from 'react';
 import { Form, Image } from 'react-bootstrap';
 import { RiImageAddLine, RiImageEditLine } from 'react-icons/ri';
-import { ImagePreviewContainer, CoverImageWrapper, ProfileImageWrapper, StyledButton } from './styles/LoginStyles';
-import { useTheme } from '@/context/theme/ThemeContext';
+import { ImagePreviewContainer, CoverImageWrapper, ProfileImageWrapper, StyledButton } from '../styles/LoginImageUploadStyles';
+import { useTheme } from '@/context/ThemeContext';
 
 function LoginImageUploadComp({ 
   profileImage, 
