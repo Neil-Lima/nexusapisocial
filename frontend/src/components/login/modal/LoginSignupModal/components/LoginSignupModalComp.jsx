@@ -4,7 +4,7 @@ import React from 'react';
 import { Modal, Container, Form, Row, Col } from 'react-bootstrap';
 import { RiUserLine, RiMailLine, RiLockPasswordLine } from 'react-icons/ri';
 import { StyledModal, StyledButton, GradientText, StyledFormControl, StyledFormLabel, StyledFormSelect } from '../styles/LoginSignupModalStyles';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import LoginImageUploadComp from '@/components/login/image/LoginImageUpload/components/LoginImageUploadComp';
 
 function LoginSignupModalComp({ 

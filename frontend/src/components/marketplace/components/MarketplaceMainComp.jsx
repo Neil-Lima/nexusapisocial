@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/styles/GlobalStyles';
 import { MainContainer, ContentWrapper } from '../styles/MarketplaceMainStyles';
 import MarketplaceHeaderComp from './MarketplaceHeaderComp';

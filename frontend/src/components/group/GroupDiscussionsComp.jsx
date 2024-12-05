@@ -4,7 +4,7 @@ import { Badge, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Discussion, StyledButton } from './styles/GroupStyles';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 
 function GroupDiscussionsComp({ discussions }) {
   const { theme } = useTheme();

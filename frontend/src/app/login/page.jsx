@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/components/login/main/styles/LoginMainStyles';
 import LoginMainComp from '@/components/login/main/components/LoginMainComp';
 

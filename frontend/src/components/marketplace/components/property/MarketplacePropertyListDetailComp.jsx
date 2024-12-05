@@ -12,7 +12,7 @@ import {
   faRuler,
   faStar
 } from "@fortawesome/free-solid-svg-icons";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import { GradientBackground } from "@/styles/GlobalStyles";
 import MarketplaceProperty3DViewerComp from "./MarketplaceProperty3DViewerComp";
 import MarketplacePropertyGalleryComp from "./MarketplacePropertyGalleryComp";

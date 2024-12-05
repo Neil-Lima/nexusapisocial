@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Tab, Nav } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { StyledNav } from './styles/PagesStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper, faImage, faVideo, faUser, faInfoCircle } from '@fortawesome/free-solid-svg-icons';

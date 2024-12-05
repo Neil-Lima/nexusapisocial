@@ -4,7 +4,7 @@ import { ListGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import {
   ListContainer,
   PropertyCard,

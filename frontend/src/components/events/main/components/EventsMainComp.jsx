@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { MainContainer, ContentArea } from '../styles/EventsMainStyles';
 import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
 import EventsHeaderComp from '../../header/components/EventsHeaderComp';

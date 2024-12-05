@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, Form } from 'react-bootstrap';
 import { RiLoginBoxLine, RiMailLine, RiLockPasswordLine } from 'react-icons/ri';
 import { StyledCard, StyledButton, GradientText, StyledFormControl } from '../styles/LoginFormStyles';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 
 function LoginFormComp({ handleLoginSubmit, handleModalShow }) {
   const { theme } = useTheme();

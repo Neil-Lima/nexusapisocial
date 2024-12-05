@@ -3,7 +3,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faUserMinus, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { FriendItem, StyledButton } from '../styles/FriendsCardStyles';
 import { handleFriendAction, getActionButtonProps } from '../utils/FriendsCardUtils';
 

@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import StyledComponentsRegistry from '../lib/registry';
-import { ThemeProvider } from '@/context/ThemeContext';
+import { ThemeProvider } from '@/context/theme/ThemeContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";

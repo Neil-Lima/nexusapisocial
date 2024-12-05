@@ -1,5 +1,5 @@
 "use client";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import JobsMainComp from "@/components/jobs/main/components/JobsMainComp";
 import { GradientBackground } from "@/styles/GlobalStyles";
 import NavMenuComp from "@/shared/navbar/NavMenuComp";

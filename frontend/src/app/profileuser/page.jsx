@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/theme/ThemeContext';
 import { GradientBackground } from '../../components/profileuser/styles/ProfileuserStyle';
 import { ProfileuserHeaderComp } from '../../components/profileuser/components/ProfileuserHeaderComp';
 import { ProfileuserNavigationComp } from '../../components/profileuser/components/ProfileuserNavigationComp';

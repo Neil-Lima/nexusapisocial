@@ -1,7 +1,7 @@
 // page.jsx
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/styles/GlobalStyles';
 import CommunitiesMainComp from '@/components/communities/main/CommunitiesMainComp';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';

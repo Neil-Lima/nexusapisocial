@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { TabContainer, TabButton } from '../styles/GalleryVideoStyles';
 
 const GalleryVideoTabsComp = ({ activeTab, onTabChange }) => {

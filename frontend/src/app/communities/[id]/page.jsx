@@ -2,7 +2,7 @@
 'use client';
 import React from 'react';
 import CommunitiesDetailComp from '@/components/communities/detail/components/CommunitiesDetailComp';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/styles/GlobalStyles';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 

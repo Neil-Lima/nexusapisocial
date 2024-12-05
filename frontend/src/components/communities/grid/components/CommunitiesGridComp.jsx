@@ -3,7 +3,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThLarge, faList, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import CommunitiesCardComp from '../../card/components/CommunitiesCardComp';
 import { 
   GridContainer, 

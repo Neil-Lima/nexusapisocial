@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import { ConditionContainer, ConditionItem } from './styles/SalesStyle';
 import { conditions } from './utils/SalesUtils';
 

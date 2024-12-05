@@ -2,7 +2,7 @@
 import React from 'react';
 import PagesDetailMainComp from '@/components/pages/PagesDetailMainComp';
 import { GradientBackground } from '@/styles/GlobalStyles';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 
 export default function PageDetailPage({ params }) {

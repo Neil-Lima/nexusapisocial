@@ -4,7 +4,7 @@ import { Form, Image, Dropdown, Button, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faVideo, faPoll, faEllipsisV, faEdit, faTrash, faClock, faThumbsUp, faComments, faShare, faSmile, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { Post, Comment, EmojiPicker, Poll, PollOption, PollBar, StyledButton } from './styles/GroupStyles';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme/ThemeContext';
 
 function GroupFeedComp({ posts, handleLike, handleComment, handleShare, handlePollVote }) {
   const { theme } = useTheme();

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Card, Form, Row, Col } from "react-bootstrap";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import {
   TypeFilterCard,
   TypeOption,

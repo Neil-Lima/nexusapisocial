@@ -3,7 +3,7 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGripHorizontal, faThList } from "@fortawesome/free-solid-svg-icons";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/context/theme/ThemeContext";
 import {
   SortContainer,
   ViewToggle,
