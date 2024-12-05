@@ -2,7 +2,9 @@
 import styled from 'styled-components';
 
 export const StoriesContainer = styled.div`
-  background: rgba(255, 255, 255, 0.1);
+   border-radius: ${props => props.theme.borderRadius};
+  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
+  box-shadow: ${props => props.theme.boxShadow};
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 15px;

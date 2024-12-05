@@ -2,14 +2,17 @@
 import { useState } from 'react';
 
 export const useDatingMain = () => {
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState('Umarizal');
+  const [viewMode, setViewMode] = useState('grid');
+  const [searchLocation, setSearchLocation] = useState('Umarizal, Belém - PA');
 
   const handleSearch = (value) => {
-    setSelectedNeighborhood(value);
+    setSearchLocation(value);
   };
 
   return {
-    selectedNeighborhood,
+    viewMode,
+    setViewMode,
+    searchLocation,
     handleSearch
   };
 };
