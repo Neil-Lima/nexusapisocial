@@ -32,7 +32,8 @@ export default function DatingMainComp() {
           </Col>
           <Col lg={7}>
             <Row className="g-4">
-              <DatingStoriesComp/>           
+              <DatingStoriesComp/>
+            
 
               <ViewToggleContainer>
                 <LocationTitle>{searchLocation}</LocationTitle>
