@@ -11,10 +11,10 @@ import MenuListComp from "@/shared/profile/components/MenuListComp";
 
 // Componentes de amigos
 import FriendsHeaderComp from "@/components/friends/header/FriendsHeaderComp";
-import FriendsSearchComp from "@/components/friends/components/FriendsSearchComp";
+import FriendsSearchComp from "@/components/friends/search/components/FriendsSearchComp";
 import FriendsFilterComp from "@/components/friends/filter/components/FriendsFilterComp";
 import FriendsListComp from "@/components/friends/list/components/FriendsListComp";
-import FriendsStatsComp from "@/components/friends/components/FriendsStatsComp";
+import FriendsStatsComp from "@/components/friends/states/components/FriendsStatsComp";
 import NavMenuComp from "@/shared/navbar/NavMenuComp";
 
 function FriendsMainComp() {

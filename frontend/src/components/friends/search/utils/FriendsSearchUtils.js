@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { mockFriends } from '../list/utils/FriendsListUtils';
+import { mockFriends } from '../../list/utils/FriendsListUtils';
 
 export const useSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');

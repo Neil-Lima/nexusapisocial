@@ -23,7 +23,7 @@ export const menuItems = {
         { title: '', path: '/feed', icon: 'faHome' },
         { title: '', path: '/jobs', icon: 'faBriefcase' },
         { title: '', path: '/dating', icon: 'faHeart' },
-        { title: '', path: '/profileuser', icon: 'faUser' }
+        { title: '', path: '/user', icon: 'faUser' }
     ],
     pages: [
         { title: 'Galeria', path: '/gallery' },
