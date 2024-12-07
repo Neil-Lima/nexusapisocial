@@ -16,8 +16,8 @@ import {
   ViewProfileButton
 } from '../styles/FriendsListStyles';
 import { useFriendsList } from '../utils/FriendsListUtils';
-import { useFriendsModal } from '../utils/FriendsModalUtils';
-import FriendsModalComp from './FriendsModalComp';
+import { useFriendsModal } from '../../modal/utils/FriendsModalUtils';
+import FriendsModalComp from '../../modal/components/FriendsModalComp';
 
 function FriendsListComp() {
   const { theme } = useTheme();

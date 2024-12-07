@@ -9,8 +9,8 @@ import {
   HeaderSubtitle,
   HeaderIcon,
   MenuButton 
-} from '../styles/FriendsHeaderStyles';
-import { headerConfig, useHeaderActions } from '../utils/FriendsHeaderUtils';
+} from './FriendsHeaderStyles';
+import { headerConfig, useHeaderActions } from './FriendsHeaderUtils';
 import { useTheme } from '@/context/theme/ThemeContext';
 
 function FriendsHeaderComp() {

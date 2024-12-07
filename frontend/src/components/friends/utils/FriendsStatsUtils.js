@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { mockFriends } from './FriendsListUtils';
+import { mockFriends } from '../list/utils/FriendsListUtils';
 
 export const statsConfig = [
   { 
