@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImage, faVideo, faSmile, faPoll } from '@fortawesome/free-solid-svg-icons';
+import { faImage, faVideo, faSmile, faPoll, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@/context/theme/ThemeContext';
 import {
   CreatePostContainer,
@@ -60,6 +60,10 @@ function CreatePostComp() {
           <MediaButton onClick={() => setShowEmojiPicker(!showEmojiPicker)} theme={theme}>
             <FontAwesomeIcon icon={faSmile} />
             <span>Emoji</span>
+          </MediaButton>
+          <MediaButton onClick={() => setShowEmojiPicker(!showEmojiPicker)} theme={theme}>
+            <FontAwesomeIcon icon={faMicrophone} />
+            <span>Audio</span>
           </MediaButton>
           <MediaButton theme={theme}>
             <FontAwesomeIcon icon={faPoll} />

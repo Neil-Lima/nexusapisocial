@@ -125,4 +125,3 @@ export const WhatsappButton = styled.button`
     transform: translateY(-2px);
   }
 `;
-
