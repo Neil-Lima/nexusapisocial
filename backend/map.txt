@@ -1,0 +1,59 @@
+src/
+├── config/
+│   ├── database.config.ts
+│   ├── jwt.config.ts
+│   └── cors.config.ts
+│
+├── modules/
+│   ├── auth/
+│   │   ├── controllers/
+│   │   │   └── auth.controller.ts
+│   │   ├── services/
+│   │   │   └── auth.service.ts
+│   │   ├── dto/
+│   │   ├── guards/
+│   │   └── strategies/
+│   │
+│   ├── users/
+│   │   ├── controllers/
+│   │   │   └── users.controller.ts
+│   │   ├── services/
+│   │   │   └── users.service.ts
+│   │   ├── dto/
+│   │   └── schemas/
+│   │
+│   ├── profiles/
+│   │   ├── controllers/
+│   │   └── services/
+│   │
+│   ├── posts/
+│   │   ├── controllers/
+│   │   └── services/
+│   │
+│   ├── communities/
+│   │   ├── controllers/
+│   │   └── services/
+│   │
+│   ├── dating/
+│   │   ├── controllers/
+│   │   └── services/
+│   │
+│   ├── messages/
+│   │   ├── controllers/
+│   │   └── services/
+│   │
+│   ├── events/
+│   │   ├── controllers/
+│   │   └── services/
+│   │
+│   └── marketplace/
+│       ├── controllers/
+│       └── services/
+│
+├── shared/
+│   ├── interfaces/
+│   ├── decorators/
+│   ├── filters/
+│   └── middlewares/
+│
+└── app.module.ts
