@@ -36,18 +36,14 @@ export class UsersService {
   }
 
   async findAll(): Promise<User[]> {
-    return this.userModel.find().select('-profileImage -coverImage').exec();
+    return this.userModel.find().exec();
   }
 
   async findOne(id: string): Promise<User> {
-    const user = await this.userModel
-      .findById(id)
-      .select('-profileImage -coverImage');
-
+    const user = await this.userModel.findById(id);
     if (!user) {
       throw new NotFoundException('Usuário não encontrado');
     }
-
     return user;
   }
 
@@ -62,7 +58,6 @@ export class UsersService {
 
     const updatedUser = await this.userModel
       .findByIdAndUpdate(id, updateUserDto, { new: true })
-      .select('-profileImage -coverImage')
       .exec();
 
     if (!updatedUser) {
@@ -83,7 +78,6 @@ export class UsersService {
 
     const updatedUser = await this.userModel
       .findByIdAndUpdate(id, updateData, { new: true })
-      .select('-profileImage -coverImage')
       .exec();
 
     if (!updatedUser) {

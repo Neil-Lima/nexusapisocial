@@ -8,7 +8,7 @@ import GalleryVideoModalComp from '@/shared/gallery/videos/modal/GalleryVideoMod
 import GalleryVideoUploadComp from '@/shared/gallery/videos/upload/GalleryVideoUploadComp';
 import GalleryVideoTabsComp from '@/shared/gallery/videos/tabs/GalleryVideoTabsComp';
 import GalleryVideoStudioComp from '@/shared/gallery/videos/studio/GalleryVideoStudioComp';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import { useGalleryVideo } from '@/shared/gallery/videos/utils/GalleryVideoUtils';
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';

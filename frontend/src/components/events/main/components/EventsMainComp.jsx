@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTheme } from '@/context/theme/ThemeContext';
 import { MainContainer, ContentArea } from '../styles/EventsMainStyles';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import EventsHeaderComp from '../../header/components/EventsHeaderComp';
 import EventsTabsComp from '../../tabs/components/EventsTabsComp';
 import EventsGridComp from '../../grid/components/EventsGridComp';

@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useCommunitiesModal } from '../modal/utils/CommunitiesModalUtils';
 import CommunitiesGridComp from '../grid/components/CommunitiesGridComp';
 import CommunitiesModalComp from '../modal/components/CommunitiesModalComp';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
 

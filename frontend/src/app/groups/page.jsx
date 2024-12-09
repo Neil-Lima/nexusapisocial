@@ -8,7 +8,7 @@ import GroupModalComp from "@/components/group/GroupModalComp";
 import GroupSidebarComp from "@/components/group/GroupSidebarComp";
 import { useGroupForm } from "@/components/group/utils/GroupUtils";
 import NavMenuComp from "@/shared/navbar/NavMenuComp";
-import ProfileCardComp from "@/shared/profile/components/ProfileCardComp";
+import ProfileCardComp from "@/shared/profile/components/card/components/ProfileCardComp";
 import ProfileStatsCardComp from "@/shared/profile/components/ProfileStatsCardComp";
 import MenuListComp from "@/shared/profile/components/MenuListComp";
 

@@ -8,7 +8,7 @@ import NotificationsHeaderComp from './NotificationsHeaderComp';
 import NotificationsFilterComp from './NotificationsFilterComp';
 import NotificationsListComp from './NotificationsListComp';
 import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
 
 const NotificationsMainComp = () => {

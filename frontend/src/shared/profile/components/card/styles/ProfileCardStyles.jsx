@@ -11,10 +11,11 @@ export const StyledProfileCard = styled(Card)`
   color: ${props => props.theme.textColor};
   box-shadow: ${props => props.theme.boxShadow};
   overflow: hidden;
+  max-width: 336px;
 
-  img {
+  img.cover-image {
     width: 100%;
-    height: auto;
+    height: 120px;
     object-fit: cover;
   }
 `;

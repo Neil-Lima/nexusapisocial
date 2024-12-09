@@ -1,27 +1,48 @@
-'use client'
+'use client';
+import { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { api } from '@/api/api';
 
 export const useSignupModal = () => {
-  const anos = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
-  const meses = [
-    'Janeiro', 
-    'Fevereiro', 
-    'Março', 
-    'Abril', 
-    'Maio', 
-    'Junho', 
-    'Julho', 
-    'Agosto', 
-    'Setembro', 
-    'Outubro', 
-    'Novembro', 
-    'Dezembro'
-  ];
-  const dias = Array.from({ length: 31 }, (_, i) => i + 1);
+  const [showModal, setShowModal] = useState(false);
+  const [showResultModal, setShowResultModal] = useState(false);
+  const [resultModalContent, setResultModalContent] = useState({
+    title: '',
+    message: ''
+  });
 
-  const handleSignupSubmit = async (event) => {
+  const signupMutation = useMutation({
+    mutationFn: async (userData) => {
+      const formData = {
+        ...userData,
+        profileImage: userData.profileImage || null,
+        coverImage: userData.coverImage || null
+      };
+      
+      const { data } = await api.post('/users', formData);
+      return data;
+    },
+    onSuccess: () => {
+      setShowModal(false);
+      setResultModalContent({
+        title: 'Sucesso!',
+        message: 'Cadastro realizado com sucesso! Você já pode fazer login.'
+      });
+      setShowResultModal(true);
+    },
+    onError: (error) => {
+      setResultModalContent({
+        title: 'Erro no Cadastro',
+        message: error.response?.data?.message || 'Erro ao realizar cadastro'
+      });
+      setShowResultModal(true);
+    }
+  });
+
+  const handleSignupSubmit = (event, profileImage, coverImage) => {
     event.preventDefault();
-    
     const formData = new FormData(event.target);
+    
     const userData = {
       nome: formData.get('nome'),
       sobrenome: formData.get('sobrenome'),
@@ -32,22 +53,19 @@ export const useSignupModal = () => {
       cidade: formData.get('cidade'),
       dataNascimento: `${formData.get('ano')}-${String(formData.get('mes')).padStart(2, '0')}-${String(formData.get('dia')).padStart(2, '0')}`,
       genero: formData.get('genero'),
+      profileImage: profileImage,
+      coverImage: coverImage
     };
 
-    try {
-      // Aqui você pode adicionar a lógica de envio dos dados para o backend
-      console.log('Dados do usuário:', userData);
-      return { success: true, message: 'Cadastro realizado com sucesso!' };
-    } catch (error) {
-      console.error('Erro ao cadastrar:', error);
-      return { success: false, message: 'Erro ao realizar cadastro. Tente novamente.' };
-    }
+    signupMutation.mutate(userData);
   };
 
-  return { 
-    anos, 
-    meses, 
-    dias, 
-    handleSignupSubmit 
+  return {
+    showModal,
+    setShowModal,
+    showResultModal,
+    setShowResultModal,
+    resultModalContent,
+    handleSignupSubmit
   };
 };

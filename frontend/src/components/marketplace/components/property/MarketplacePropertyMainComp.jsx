@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/styles/GlobalStyles';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import MarketplacePropertyPriceFilterComp from './MarketplacePropertyPriceFilterComp';
 import MarketplacePropertyRoomFilterComp from './MarketplacePropertyRoomFilterComp';
 import MarketplacePropertySearchComp from './MarketplacePropertySearchComp';

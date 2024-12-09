@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap, faChartLine, faCalculator, faUsers } from '@fortawesome/free-solid-svg-icons';

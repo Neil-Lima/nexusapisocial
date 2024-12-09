@@ -5,7 +5,7 @@ import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from './styles/PagesStyle';
 import PagesListComp from './PagesListComp';
 import PagesSearchComp from './PagesSearchComp';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import MenuListComp from '@/shared/menu/MenuListComp';
 import { fetchPages } from './utils/PagesUtils';
 

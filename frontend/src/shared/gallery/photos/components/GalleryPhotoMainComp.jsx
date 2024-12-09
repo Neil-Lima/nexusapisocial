@@ -6,7 +6,7 @@ import { GradientBackground } from '@/styles/GlobalStyles';
 import { MainContainer, GallerySection } from '../styles/GalleryPhotoMainStyles';
 import { useGalleryPhoto } from '../utils/GalleryPhotoUtils';
 
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
 import GalleryPhotoActionBarComp from './GalleryPhotoActionBarComp';
 import GalleryPhotoSearchComp from './GalleryPhotoSearchComp';

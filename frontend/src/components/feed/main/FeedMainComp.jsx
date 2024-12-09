@@ -6,7 +6,7 @@ import { GradientBackground } from '@/styles/GlobalStyles';
 
 // Componentes Globais
 import NavMenuComp from '@/shared/navbar/NavMenuComp';
-import ProfileCardComp from '@/shared/profile/components/ProfileCardComp';
+import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import StoriesComp from '@/shared/stories/StoriesComp';
 import CreatePostComp from '@/shared/post/components/CreatePostComp';
 import PostCardComp from '@/shared/post/components/PostCardComp';

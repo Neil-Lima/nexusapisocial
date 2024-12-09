@@ -5,7 +5,7 @@ import { useTheme } from "@/context/theme/ThemeContext";
 import { GradientBackground } from "@/styles/GlobalStyles";
 
 // Componentes do perfil
-import ProfileCardComp from "@/shared/profile/components/ProfileCardComp";
+import ProfileCardComp from "@/shared/profile/components/card/components/ProfileCardComp";
 import ProfileStatsCardComp from "@/shared/profile/components/ProfileStatsCardComp";
 import MenuListComp from "@/shared/profile/components/MenuListComp";
 

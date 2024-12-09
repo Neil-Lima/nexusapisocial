@@ -5,27 +5,28 @@ import { useTheme } from "@/context/theme/ThemeContext";
 import {
   StyledProfileCard,
   ProfileImage,
-  ProfileDescription,
-  ProfileLink
+  ProfileDescription
 } from "../styles/ProfileCardStyles";
-import { profileData } from "../utils/ProfileCardUtils";
+import { useProfileData } from "../utils/ProfileCardUtils";
 
 function ProfileCardComp() {
   const { theme } = useTheme();
+  const { name, imageUrl, coverUrl, isLoading } = useProfileData();
+
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <StyledProfileCard theme={theme}>
-      <img style={{width: 336}} src={profileData.coverUrl} />
+      <img className="cover-image" src={coverUrl} alt="Capa" />
       <Card.Body>
         <img 
           style={{marginTop: -80, width: '55%', border: '6px solid rgb(255,255,255)'}} 
-          src={profileData.imageUrl}
-          alt={profileData.name}
+          src={imageUrl}
+          alt={name}
         />
-        <h4>{profileData.name}</h4>
-        <ProfileDescription theme={theme}>
-          {profileData.description.prefix} <ProfileLink href={profileData.description.linkUrl}>{profileData.description.linkText}</ProfileLink>{profileData.description.suffix}
-        </ProfileDescription>
+        <h4>{name}</h4>
       </Card.Body>
     </StyledProfileCard>
   );
