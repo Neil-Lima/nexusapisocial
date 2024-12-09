@@ -1,13 +1,14 @@
 'use client'
-
 import React from 'react';
 import { Card, Form } from 'react-bootstrap';
 import { RiLoginBoxLine, RiMailLine, RiLockPasswordLine } from 'react-icons/ri';
 import { StyledCard, StyledButton, GradientText, StyledFormControl } from '../styles/LoginFormStyles';
 import { useTheme } from '@/context/theme/ThemeContext';
+import { useLoginForm } from '../utils/LoginFormUtils';
 
-function LoginFormComp({ handleLoginSubmit, handleModalShow }) {
+function LoginFormComp({ handleModalShow }) {
   const { theme } = useTheme();
+  const { handleLoginSubmit } = useLoginForm();
 
   return (
     <StyledCard theme={theme}>
@@ -30,7 +31,7 @@ function LoginFormComp({ handleLoginSubmit, handleModalShow }) {
               <span className="input-group-text" style={{background: `linear-gradient(${theme.gradientDirection}, ${theme.primaryColor}, ${theme.secondaryColor})`, color: 'white'}}>
                 <RiLockPasswordLine />
               </span>
-              <StyledFormControl type="password" name="password" placeholder="Senha" className="py-2" theme={theme} />
+              <StyledFormControl type="password" name="senha" placeholder="Senha" className="py-2" theme={theme} />
             </div>
           </Form.Group>
           <StyledButton type="submit" className="w-100 py-2 mb-3" theme={theme}>
