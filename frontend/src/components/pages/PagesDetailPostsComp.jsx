@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useTheme } from '@/context/theme/ThemeContext';
-import CreatePostComp from '@/shared/post/components/CreatePostComp';
-import PostCardComp from '@/shared/post/components/PostCardComp';
-import { usePostCard } from '@/shared/post/utils/PostCardUtils';
+import CreatePostComp from '@/shared/post/create-card/components/CreatePostComp';
+import PostCardComp from '@/shared/post/card/components/PostCardComp';
+import { usePostCard } from '@/shared/post/card/utils/PostCardUtils';
 
 export default function PagesDetailPostsComp() {
   const { theme } = useTheme();

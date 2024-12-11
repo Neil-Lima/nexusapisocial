@@ -23,7 +23,7 @@ import {
   ContentWrapper,
 } from '../../styles/property/MarketplacePropertyMainStyles';
 import { useMarketplacePropertyMain } from '../../utils/property/MarketplacePropertyMainUtils';
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 
 function MarketplacePropertyMainComp() {
   const { theme } = useTheme();

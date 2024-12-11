@@ -8,7 +8,7 @@ import PagesDetailStatsComp from './PagesDetailStatsComp';
 import PagesDetailTabsComp from './PagesDetailTabsComp';
 import PagesDetailChatComp from './PagesDetailChatComp';
 import { pageData } from './utils/PagesUtils';
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 
 export default function PagesDetailMainComp({ id }) {
   const { theme } = useTheme();

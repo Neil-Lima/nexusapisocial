@@ -2,18 +2,22 @@ import {
   Injectable,
   ConflictException,
   NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { ConfigService } from '@nestjs/config';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { User } from '../schemas/user.schema';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
+import { processImage, validateMedia } from '../../../config/uploads.config';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectModel(User.name) private readonly userModel: Model<User>,
+    private configService: ConfigService,
   ) {}
 
   async create(createUserDto: CreateUserDto): Promise<User> {
@@ -25,13 +29,34 @@ export class UsersService {
       throw new ConflictException('Email já está em uso');
     }
 
+    if (
+      createUserDto.profileImage &&
+      !validateMedia(createUserDto.profileImage).isValid
+    ) {
+      throw new BadRequestException('Formato de imagem de perfil inválido');
+    }
+
+    if (
+      createUserDto.coverImage &&
+      !validateMedia(createUserDto.coverImage).isValid
+    ) {
+      throw new BadRequestException('Formato de imagem de capa inválido');
+    }
+
     const hashedPassword = await bcrypt.hash(createUserDto.senha, 10);
 
-    const newUser = new this.userModel({
+    const processedData = {
       ...createUserDto,
       senha: hashedPassword,
-    });
+      profileImage: createUserDto.profileImage
+        ? await processImage(createUserDto.profileImage)
+        : null,
+      coverImage: createUserDto.coverImage
+        ? await processImage(createUserDto.coverImage)
+        : null,
+    };
 
+    const newUser = new this.userModel(processedData);
     return newUser.save();
   }
 
@@ -56,8 +81,32 @@ export class UsersService {
       updateUserDto.senha = await bcrypt.hash(updateUserDto.senha, 10);
     }
 
+    if (
+      updateUserDto.profileImage &&
+      !validateMedia(updateUserDto.profileImage).isValid
+    ) {
+      throw new BadRequestException('Formato de imagem de perfil inválido');
+    }
+
+    if (
+      updateUserDto.coverImage &&
+      !validateMedia(updateUserDto.coverImage).isValid
+    ) {
+      throw new BadRequestException('Formato de imagem de capa inválido');
+    }
+
+    const processedData = {
+      ...updateUserDto,
+      profileImage: updateUserDto.profileImage
+        ? await processImage(updateUserDto.profileImage)
+        : undefined,
+      coverImage: updateUserDto.coverImage
+        ? await processImage(updateUserDto.coverImage)
+        : undefined,
+    };
+
     const updatedUser = await this.userModel
-      .findByIdAndUpdate(id, updateUserDto, { new: true })
+      .findByIdAndUpdate(id, processedData, { new: true })
       .exec();
 
     if (!updatedUser) {
@@ -73,8 +122,20 @@ export class UsersService {
     coverImage?: string,
   ): Promise<User> {
     const updateData = {};
-    if (profileImage) updateData['profileImage'] = profileImage;
-    if (coverImage) updateData['coverImage'] = coverImage;
+
+    if (profileImage) {
+      if (!validateMedia(profileImage).isValid) {
+        throw new BadRequestException('Formato de imagem de perfil inválido');
+      }
+      updateData['profileImage'] = await processImage(profileImage);
+    }
+
+    if (coverImage) {
+      if (!validateMedia(coverImage).isValid) {
+        throw new BadRequestException('Formato de imagem de capa inválido');
+      }
+      updateData['coverImage'] = await processImage(coverImage);
+    }
 
     const updatedUser = await this.userModel
       .findByIdAndUpdate(id, updateData, { new: true })

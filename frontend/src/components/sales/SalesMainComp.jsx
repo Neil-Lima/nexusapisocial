@@ -10,7 +10,7 @@ import SalesSortingComp from './SalesSortingComp';
 import SalesPaginationComp from './SalesPaginationComp';
 import { MainContainer } from './styles/SalesStyle';
 import { getProducts } from './utils/SalesUtils';
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 
 export default function SalesMainComp() {
   const { theme } = useTheme();

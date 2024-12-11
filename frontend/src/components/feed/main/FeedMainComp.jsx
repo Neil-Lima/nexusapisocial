@@ -5,11 +5,11 @@ import { useTheme } from '@/context/theme/ThemeContext';
 import { GradientBackground } from '@/styles/GlobalStyles';
 
 // Componentes Globais
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import StoriesComp from '@/shared/stories/StoriesComp';
-import CreatePostComp from '@/shared/post/components/CreatePostComp';
-import PostCardComp from '@/shared/post/components/PostCardComp';
+import CreatePostComp from '@/shared/post/create-card/components/CreatePostComp';
+import PostCardComp from '@/shared/post/card/components/PostCardComp';
 import LoadMoreComp from '@/shared/loadmore/LoadMoreComp';
 import SuggestionsFriendComp from '@/shared/suggestions/components/SuggestionsFriendComp';
 import NewsLatestComp from '@/shared/news/components/NewsLatestComp';

@@ -10,7 +10,7 @@ import GalleryVideoTabsComp from '@/shared/gallery/videos/tabs/GalleryVideoTabsC
 import GalleryVideoStudioComp from '@/shared/gallery/videos/studio/GalleryVideoStudioComp';
 import ProfileCardComp from '@/shared/profile/components/card/components/ProfileCardComp';
 import { useGalleryVideo } from '@/shared/gallery/videos/utils/GalleryVideoUtils';
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 import MenuListComp from '@/shared/profile/components/MenuListComp';
 
 export default function VideoGalleryPage() {

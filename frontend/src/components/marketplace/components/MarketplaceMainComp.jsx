@@ -17,7 +17,7 @@ import MarketplaceUserProfileComp from './MarketplaceUserProfileComp';
 import MarketplaceNavigationComp from './MarketplaceNavigationComp';
 import MarketplaceStatsComp from './MarketplaceStatsComp';
 import { useMarketplaceMain } from '../utils/MarketplaceMainUtils';
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 
 function MarketplaceMainComp() {
   const { theme } = useTheme();

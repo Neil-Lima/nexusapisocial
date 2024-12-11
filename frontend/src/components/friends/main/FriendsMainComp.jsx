@@ -15,7 +15,7 @@ import FriendsSearchComp from "@/components/friends/search/components/FriendsSea
 import FriendsFilterComp from "@/components/friends/filter/components/FriendsFilterComp";
 import FriendsListComp from "@/components/friends/list/components/FriendsListComp";
 import FriendsStatsComp from "@/components/friends/states/components/FriendsStatsComp";
-import NavMenuComp from "@/shared/navbar/NavMenuComp";
+import NavMenuComp from "@/shared/navbar/components/NavMenuComp";
 
 function FriendsMainComp() {
   const { theme } = useTheme();

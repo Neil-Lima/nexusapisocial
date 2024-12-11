@@ -14,7 +14,7 @@ import GalleryPhotoFilterComp from './GalleryPhotoFilterComp';
 import GalleryPhotoGridComp from './GalleryPhotoGridComp';
 import GalleryPhotoModalComp from './GalleryPhotoModalComp';
 import ProfileStatsCardComp from '@/shared/profile/components/ProfileStatsCardComp';
-import NavMenuComp from '@/shared/navbar/NavMenuComp';
+import NavMenuComp from '@/shared/navbar/components/NavMenuComp';
 
 const GalleryPhotoMainComp = () => {
   const { theme } = useTheme();

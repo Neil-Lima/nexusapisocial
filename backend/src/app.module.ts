@@ -3,15 +3,17 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { PostsModule } from './modules/posts/posts.module';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import corsConfig from './config/cors.config';
+import uploadsConfig from './config/uploads.config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [databaseConfig, jwtConfig, corsConfig],
+      load: [databaseConfig, jwtConfig, corsConfig, uploadsConfig],
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
@@ -27,6 +29,7 @@ import corsConfig from './config/cors.config';
     }),
     UsersModule,
     AuthModule,
+    PostsModule,
   ],
 })
 export class AppModule {}

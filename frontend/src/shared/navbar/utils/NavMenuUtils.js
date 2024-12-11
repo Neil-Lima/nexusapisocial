@@ -1,12 +1,14 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
     faHome, 
     faBriefcase, 
     faUser, 
     faFile, 
     faHeart,
-    faUserCircle 
+    faUserCircle,
+    faSignOutAlt 
 } from '@fortawesome/free-solid-svg-icons';
 
 export const iconMapping = {
@@ -15,7 +17,8 @@ export const iconMapping = {
     faUser,
     faFile,
     faHeart,
-    faUserCircle
+    faUserCircle,
+    faSignOutAlt
 };
 
 export const menuItems = {
@@ -44,16 +47,24 @@ export const menuItems = {
     ],
     account: [
         { title: 'Configurações', path: '/configuracoes' },
-        { title: 'Login', path: '/login' }
+        { title: 'Login', path: '/login' },
+        { title: 'Sair', path: '/logout', icon: 'faSignOutAlt' }
     ]
 };
 
 export const useNavMenu = () => {
     const [showColorPickerComp, setShowColorPickerComp] = useState(false);
+    const router = useRouter();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        router.push('/login');
+    };
 
     return {
         showColorPickerComp,
-        setShowColorPickerComp
+        setShowColorPickerComp,
+        handleLogout
     };
 };
 

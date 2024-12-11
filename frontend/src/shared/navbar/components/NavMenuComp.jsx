@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSunRain, faSearch, faBell, faCog, faPalette, faFile, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@/context/theme/ThemeContext';
 import ColorPickerComp from '@/styles/ColorPickerComp';
-import { StyledNavbar, StyledNavLink, StyledNavDropdown, NavItemWrapper, StyledButton, SearchInput } from './styles/NavMenuStyles';
-import { useNavMenu, menuItems, iconMapping, handleColorPickerToggle } from './utils/NavMenuUtils';
+import { StyledNavbar, StyledNavLink, StyledNavDropdown, NavItemWrapper, StyledButton, SearchInput } from '../styles/NavMenuStyles';
+import { useNavMenu, menuItems, iconMapping, handleColorPickerToggle } from '../utils/NavMenuUtils';
 
 function NavMenuComp() {
   const { theme } = useTheme();
-  const { showColorPickerComp, setShowColorPickerComp } = useNavMenu();
+  const { showColorPickerComp, setShowColorPickerComp, handleLogout } = useNavMenu();
 
   return (
     <StyledNavbar expand="lg" className="shadow-sm" theme={theme}>
@@ -66,7 +66,12 @@ function NavMenuComp() {
                 theme={theme}
               >
                 {menuItems.account.map((item, index) => (
-                  <NavDropdown.Item key={index} href={item.path}>
+                  <NavDropdown.Item 
+                    key={index} 
+                    onClick={item.title === 'Sair' ? handleLogout : undefined}
+                    href={item.title !== 'Sair' ? item.path : undefined}
+                  >
+                    {item.icon && <FontAwesomeIcon icon={iconMapping[item.icon]} style={{marginRight: '5px'}} />}
                     {item.title}
                   </NavDropdown.Item>
                 ))}

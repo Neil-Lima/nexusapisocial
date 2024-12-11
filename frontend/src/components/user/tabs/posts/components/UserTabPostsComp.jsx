@@ -14,8 +14,8 @@ import {
   PostActions
 } from '../styles/UserTabPostsStyles';
 import { useUserTabPosts } from '../utils/UserTabPostsUtils';
-import CreatePostComp from '@/shared/post/components/CreatePostComp';
-import PostCardComp from '@/shared/post/components/PostCardComp';
+import CreatePostComp from '@/shared/post/create-card/components/CreatePostComp';
+import PostCardComp from '@/shared/post/card/components/PostCardComp';
 
 export default function UserTabPostsComp() {
   const { theme } = useTheme();
