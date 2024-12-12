@@ -1,79 +1,61 @@
 'use client';
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faCalendarAlt, 
-  faHeart, 
-  faEnvelope,
-  faBriefcase
-} from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@/context/theme/ThemeContext';
 import {
   AboutContainer,
-  OverviewCard,
-  InfoCard,
-  InfoIcon,
-  InfoText
+  AboutSection,
+  EditButton
 } from '../styles/UserTabAboutStyles';
 import { useUserTabAbout } from '../utils/UserTabAboutUtils';
 
-export default function UserTabAboutComp() {
+function UserTabAboutComp({ user, isOwnProfile }) {
   const { theme } = useTheme();
-  const { userInfo } = useUserTabAbout();
+  const {
+    isEditing,
+    setIsEditing,
+    formData,
+    handleInputChange,
+    handlePrivacyChange,
+    handleSave,
+    isUpdating
+  } = useUserTabAbout(user, isOwnProfile);
 
   return (
-    <AboutContainer>
-      <OverviewCard theme={theme}>
-        <h4>Visão Geral</h4>
-        <p>{userInfo.overview}</p>
-      </OverviewCard>
+    <AboutContainer theme={theme}>
+      <AboutSection theme={theme}>
+        <h3>Informações Básicas</h3>
+        {isEditing ? (
+          <>
+            <textarea
+              value={formData.description}
+              onChange={(e) => handleInputChange('description', e.target.value)}
+              placeholder="Descreva sobre você..."
+            />
+            <select
+              value={formData.privacy.basic}
+              onChange={(e) => handlePrivacyChange('basic', e.target.value)}
+            >
+              <option value="public">Público</option>
+              <option value="friends">Apenas Amigos</option>
+              <option value="private">Privado</option>
+            </select>
+          </>
+        ) : (
+          <p>{user.description}</p>
+        )}
+      </AboutSection>
 
-      <Row>
-        <Col>
-          <InfoCard theme={theme}>
-            <div className="card-body">
-              <InfoText>
-                <FontAwesomeIcon icon={faCalendarAlt} />
-                Nascido: <strong>{userInfo.birthDate}</strong>
-              </InfoText>
-            </div>
-          </InfoCard>
-        </Col>
-        <Col>
-          <InfoCard theme={theme}>
-            <div className="card-body">
-              <InfoText>
-                <FontAwesomeIcon icon={faHeart} />
-                Situação: <strong>{userInfo.relationship}</strong>
-              </InfoText>
-            </div>
-          </InfoCard>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <InfoCard theme={theme}>
-            <div className="card-body">
-              <InfoText>
-                <FontAwesomeIcon icon={faBriefcase} />
-                <strong>{userInfo.occupation}</strong>
-              </InfoText>
-            </div>
-          </InfoCard>
-        </Col>
-        <Col>
-          <InfoCard theme={theme}>
-            <div className="card-body">
-              <InfoText>
-                <FontAwesomeIcon icon={faEnvelope} />
-                E-mail: <strong>{userInfo.email}</strong>
-              </InfoText>
-            </div>
-          </InfoCard>
-        </Col>
-      </Row>
+      {isOwnProfile && (
+        <EditButton
+          onClick={isEditing ? handleSave : () => setIsEditing(true)}
+          disabled={isUpdating}
+          theme={theme}
+        >
+          {isEditing ? (isUpdating ? 'Salvando...' : 'Salvar') : 'Editar'}
+        </EditButton>
+      )}
     </AboutContainer>
   );
 }
+
+export default UserTabAboutComp;

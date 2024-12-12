@@ -1,40 +1,67 @@
 'use client';
 import styled from 'styled-components';
-import { Card, Row, Col } from 'react-bootstrap';
 
 export const AboutContainer = styled.div`
-  padding: 36px;
-`;
-
-export const OverviewCard = styled(Card)`
-  border: none;
-  margin-bottom: 24px;
   padding: 20px;
-  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-  border-radius: ${props => props.theme.borderRadius};
 `;
 
-export const InfoCard = styled(Card)`
-  border: none;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  margin-bottom: 10px;
+export const AboutSection = styled.div`
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  border-radius: ${props => props.theme.borderRadius};
+  padding: 20px;
+  margin-bottom: 20px;
+
+  h3 {
+    color: ${props => props.theme.textColor};
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: ${props => props.theme.textColor};
+    opacity: 0.9;
+  }
+
+  textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    color: ${props => props.theme.textColor};
+    min-height: 100px;
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 8px;
+    color: ${props => props.theme.textColor};
+    margin-bottom: 10px;
+
+    option {
+      background: ${props => props.theme.primaryColor};
+    }
+  }
 `;
 
-export const InfoIcon = styled.i`
-  margin-bottom: 14px;
-  font-size: 20px;
-  color: ${props => props.theme.primaryColor};
-  margin-right: 17px;
-  float: left;
-`;
+export const EditButton = styled.button`
+  background: ${props => props.theme.highlightColor};
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: white;
+  transition: all 0.3s ease;
 
-export const InfoText = styled.h6`
-  color: rgb(103, 106, 121);
-  margin: 0;
-  
-  strong {
-    margin-left: 5px;
+  &:hover:not(:disabled) {
+    background: ${props => props.theme.secondaryHighlightColor};
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 `;

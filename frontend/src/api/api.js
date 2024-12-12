@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API_CONFIG = {
-  baseURL: 'http://localhost:3334',
+  baseURL: 'http://localhost:3333',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',

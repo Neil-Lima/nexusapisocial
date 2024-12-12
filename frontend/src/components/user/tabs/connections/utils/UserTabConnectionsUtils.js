@@ -1,39 +1,29 @@
 'use client';
-import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { api } from '@/api/api';
 
-export const useUserTabConnections = () => {
-  const [connections] = useState([
-    {
-      id: 1,
-      name: 'Hashirama Senju',
-      avatar: 'https://example.com/avatar1.jpg',
-      mutualFriends: 25
+export const useUserTabConnections = (userId) => {
+  const { data: connections, isLoading: isLoadingConnections } = useQuery({
+    queryKey: ['userConnections', userId],
+    queryFn: async () => {
+      const response = await api.get(`/users/${userId}/friends`);
+      return response.data;
     },
-    {
-      id: 2,
-      name: 'Tobirama Senju',
-      avatar: 'https://example.com/avatar2.jpg',
-      mutualFriends: 15
+    enabled: !!userId
+  });
+
+  const { data: suggestions, isLoading: isLoadingSuggestions } = useQuery({
+    queryKey: ['friendSuggestions'],
+    queryFn: async () => {
+      const response = await api.get('/users/friends/suggestions');
+      return response.data;
     },
-    {
-      id: 3,
-      name: 'Izuna Uchiha',
-      avatar: 'https://example.com/avatar3.jpg',
-      mutualFriends: 30
-    }
-  ]);
-
-  const handleMessage = (connectionId) => {
-    console.log('Send message to:', connectionId);
-  };
-
-  const handleViewProfile = (connectionId) => {
-    console.log('View profile:', connectionId);
-  };
+    enabled: !!userId
+  });
 
   return {
     connections,
-    handleMessage,
-    handleViewProfile
+    suggestions,
+    isLoading: isLoadingConnections || isLoadingSuggestions
   };
 };

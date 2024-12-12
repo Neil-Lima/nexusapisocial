@@ -1,9 +1,13 @@
 'use client';
 import styled from 'styled-components';
-import { Card } from 'react-bootstrap';
 
 export const ConnectionsContainer = styled.div`
   padding: 20px;
+
+  h3 {
+    color: ${props => props.theme.textColor};
+    margin-bottom: 20px;
+  }
 `;
 
 export const ConnectionsGrid = styled.div`
@@ -12,59 +16,52 @@ export const ConnectionsGrid = styled.div`
   gap: 20px;
 `;
 
-export const ConnectionCard = styled(Card)`
-  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-  border: none;
+export const ConnectionCard = styled.div`
+  background: rgba(255, 255, 255, 0.1);
   border-radius: ${props => props.theme.borderRadius};
-  transition: transform 0.3s ease;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    color: ${props => props.theme.textColor};
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: ${props => props.theme.textColor};
+    opacity: 0.7;
+    font-size: 0.9em;
+  }
+
+  button {
+    background: ${props => props.theme.highlightColor};
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: ${props => props.theme.secondaryHighlightColor};
+      transform: translateY(-2px);
+    }
+  }
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 `;
 
-export const ConnectionAvatar = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: ${props => props.theme.borderRadius} ${props => props.theme.borderRadius} 0 0;
-`;
-
-export const ConnectionInfo = styled.div`
-  padding: 15px;
-  color: white;
-`;
-
-export const ConnectionName = styled.h5`
-  margin: 0;
-  color: white;
-`;
-
-export const ConnectionMeta = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-  margin-top: 5px;
-`;
-
-export const ConnectionActions = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-`;
-
-export const ActionButton = styled.button`
-  flex: 1;
-  padding: 8px;
-  border: none;
-  border-radius: ${props => props.theme.borderRadius};
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
+export const SuggestionsContainer = styled.div`
+  margin-top: 40px;
 `;

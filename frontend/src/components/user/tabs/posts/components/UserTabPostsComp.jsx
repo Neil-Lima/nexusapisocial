@@ -1,30 +1,25 @@
 'use client';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@/context/theme/ThemeContext';
-import {
-  PostsContainer,
-  PostCard,
-  PostHeader,
-  PostAvatar,
-  PostInfo,
-  PostContent,
-  PostImage,
-  PostActions
-} from '../styles/UserTabPostsStyles';
+import { PostsContainer } from '../styles/UserTabPostsStyles';
 import { useUserTabPosts } from '../utils/UserTabPostsUtils';
-import CreatePostComp from '@/shared/post/create-card/components/CreatePostComp';
 import PostCardComp from '@/shared/post/card/components/PostCardComp';
+import CreatePostComp from '@/shared/post/create-card/components/CreatePostComp';
 
-export default function UserTabPostsComp() {
+function UserTabPostsComp({ userId, isOwnProfile }) {
   const { theme } = useTheme();
-  const { posts, handleLike, handleComment, handleShare } = useUserTabPosts();
+  const { posts, isLoading } = useUserTabPosts(userId);
+
+  if (isLoading) return <div>Carregando posts...</div>;
 
   return (
-    <PostsContainer>
-      <CreatePostComp/>
-      <PostCardComp/>
+    <PostsContainer theme={theme}>
+      {isOwnProfile && <CreatePostComp />}
+      {posts?.map(post => (
+        <PostCardComp key={post._id} post={post} />
+      ))}
     </PostsContainer>
   );
 }
+
+export default UserTabPostsComp;
