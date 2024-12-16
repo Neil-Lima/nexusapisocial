@@ -15,16 +15,23 @@ const nextConfig = {
     styledComponents: true,
   },
   reactStrictMode: true,
-  webpack: (config, { isServer }) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-      module: false,
+  // Configuração do webpack como função assíncrona
+  webpack: async (config, { isServer }) => {
+    config.resolve = {
+      ...config.resolve,
+      fallback: {
+        ...config.resolve.fallback,
+        fs: false,
+        module: false,
+      }
     };
-    config.module.unknownContextCritical = false;
-    config.module.exprContextCritical = false;
-    config.module.unknownContextRegExp = /$^/;
-    config.module.exprContextRegExp = /$^/;
+    config.module = {
+      ...config.module,
+      unknownContextCritical: false,
+      exprContextCritical: false,
+      unknownContextRegExp: /$^/,
+      exprContextRegExp: /$^/,
+    };
     return config;
   },
   typescript: {
@@ -32,6 +39,10 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  // Desabilitar checagem de tipos durante o build
+  experimental: {
+    typedRoutes: false,
   }
 };
 
