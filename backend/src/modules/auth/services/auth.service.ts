@@ -1,8 +1,9 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../../users/services/users.service';
-import * as bcrypt from 'bcrypt';
 import { LoginDto } from '../dto/login.dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
@@ -11,10 +12,11 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(email: string, senha: string): Promise<any> {
+  async validateUser(email: string, pass: string): Promise<any> {
     const user = await this.usersService.findByEmail(email);
-    if (user && (await bcrypt.compare(senha, user.senha))) {
-      const { senha, ...result } = user.toObject();
+    if (user && await bcrypt.compare(pass, user.senha)) {
+      const result = user.toObject();
+      delete result.senha;
       return result;
     }
     return null;
@@ -29,7 +31,11 @@ export class AuthService {
     const payload = { email: user.email, sub: user._id };
     return {
       access_token: this.jwtService.sign(payload),
-      user,
+      user: {
+        id: user._id,
+        email: user.email,
+        nome: user.nome
+      }
     };
   }
 }

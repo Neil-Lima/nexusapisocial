@@ -1,10 +1,10 @@
-/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { PostsModule } from './modules/posts/posts.module';
+import { CommunitiesModule } from './modules/communities/communities.module';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import corsConfig from './config/cors.config';
@@ -30,7 +30,8 @@ import uploadsConfig from './config/uploads.config';
     }),
     UsersModule,
     AuthModule,
-    PostsModule,   
+    PostsModule,
+    CommunitiesModule,
   ],
 })
 export class AppModule {}
