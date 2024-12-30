@@ -8,6 +8,6 @@ async function bootstrap() {
   app.enableCors(corsConfig);
   app.use(json({ limit: '50mb' }));
   app.use(urlencoded({ limit: '50mb', extended: true }));
-  await app.listen(5000);
+  await app.listen(process.env.PORT || 5000);
 }
 bootstrap();
