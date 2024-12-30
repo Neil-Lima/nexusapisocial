@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { api } from '@/api/api';
 
 export const useSuggestions = () => {
   const [suggestions, setSuggestions] = useState([

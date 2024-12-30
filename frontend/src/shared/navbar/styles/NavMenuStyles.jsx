@@ -1,86 +1,109 @@
 'use client';
 import styled from 'styled-components';
-import { Navbar, Nav, NavDropdown, Button, Form } from 'react-bootstrap';
+import { Navbar, Button, Form } from 'react-bootstrap';
 
 export const StyledNavbar = styled(Navbar)`
-  background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-  padding: 0.5rem 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: ${props => props.theme.cardBackground};
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 0;
 `;
 
-export const StyledNavLink = styled(Nav.Link)`
-  color: #ffffff !important;
-  margin-right: 15px;
+export const NavBrand = styled.div`
+  color: ${props => props.theme.primaryColor};
+  font-size: 1.5rem;
   font-weight: bold;
-  border-bottom: 3px solid transparent;
+  cursor: pointer;
   transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+export const NavLinks = styled.div`
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
-
-  &:hover {
-    color: #FF0080 !important;
-    border-bottom-color: #FF0080;
-  }
-`;
-
-export const StyledNavDropdown = styled(NavDropdown)`
-  .dropdown-toggle {
-    color: #ffffff !important;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-  }
-
-  .dropdown-menu {
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  }
-
-  .dropdown-item {
-    color: #ffffff;
+  gap: 20px;
+  
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    
     &:hover {
-      background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
-      color: #ffffff;
+      color: ${props => props.theme.primaryColor};
+      transform: translateY(-2px);
     }
   }
 `;
 
-export const NavItemWrapper = styled.div`
-  display: flex;
-  align-items: center;
+export const SearchInput = styled(Form.Control)`
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  
+  &:focus {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    box-shadow: none;
+  }
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
 `;
 
 export const StyledButton = styled(Button)`
   background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.primaryColor}, ${props.theme.secondaryColor})`};
   border: none;
-  color: ${props => props.theme.buttonColor || '#ffffff'};
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
+  
+  &:hover {
+    background: ${props => `linear-gradient(${props.theme.gradientDirection}, ${props.theme.secondaryColor}, ${props.theme.primaryColor})`};
+  }
+`;
+
+export const SearchResultsDropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: ${props => props.theme.cardBackground};
+  border-radius: 0 0 ${props => props.theme.borderRadius} ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.boxShadow};
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+`;
+
+export const SearchResultItem = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
   }
 `;
 
-export const SearchInput = styled(Form.Control)`
-  background-color: rgba(255,255,255,0.1);
-  color: #ffffff;
-  border: none;
-  
-  &:focus {
-    background-color: rgba(255,255,255,0.2);
-    color: #ffffff;
-    box-shadow: none;
-  }
+export const UserAvatar = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+`;
 
-  &::placeholder {
-    color: rgba(255,255,255,0.7);
-  }
+export const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const UserName = styled.span`
+  color: white;
+  font-weight: 500;
+`;
+
+export const UserLocation = styled.span`
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
 `;

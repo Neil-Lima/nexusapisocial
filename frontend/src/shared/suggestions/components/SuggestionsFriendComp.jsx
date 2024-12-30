@@ -1,4 +1,3 @@
-// frontend/src/components/suggestions/friend/components/SuggestionsFriendComp.jsx
 'use client';
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
@@ -12,11 +11,29 @@ import {
   ActionButtons,
   ActionButton
 } from '../styles/SuggestionsStyles';
-import { useSuggestions } from '../utils/SuggestionsUtils';
 
 function SuggestionsFriendComp() {
   const { theme } = useTheme();
-  const { suggestions, handleAddFriend, handleIgnoreSuggestion } = useSuggestions();
+  const suggestions = [
+    {
+      id: 1,
+      name: 'João Silva',
+      avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+      mutualFriends: 12
+    },
+    {
+      id: 2,
+      name: 'Maria Santos',
+      avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+      mutualFriends: 8
+    },
+    {
+      id: 3,
+      name: 'Pedro Costa',
+      avatar: 'https://randomuser.me/api/portraits/men/3.jpg',
+      mutualFriends: 15
+    }
+  ];
 
   return (
     <SuggestionsContainer theme={theme}>
@@ -34,14 +51,10 @@ function SuggestionsFriendComp() {
                   <small>{suggestion.mutualFriends} amigos em comum</small>
                 </UserInfo>
                 <ActionButtons>
-                  <ActionButton theme={theme} onClick={() => handleAddFriend(suggestion.id)}>
+                  <ActionButton theme={theme}>
                     <FontAwesomeIcon icon={faUserPlus} />
                   </ActionButton>
-                  <ActionButton 
-                    theme={theme} 
-                    data-danger="true" 
-                    onClick={() => handleIgnoreSuggestion(suggestion.id)}
-                  >
+                  <ActionButton theme={theme} danger>
                     <FontAwesomeIcon icon={faTimes} />
                   </ActionButton>
                 </ActionButtons>

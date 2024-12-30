@@ -1,27 +1,19 @@
-// frontend/src/shared/navbar/components/NavMenuComp.jsx
 'use client';
 import React from 'react';
-import { Navbar, Nav, Container, Form, InputGroup } from 'react-bootstrap';
+import { Navbar, Nav, Container, Form, InputGroup, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSunRain, faSearch, faBell, faCog, faPalette } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSunRain, faSearch, faBell, faCog, faPalette, faFile, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@/context/theme/ThemeContext';
 import ColorPickerComp from '@/styles/ColorPickerComp';
-import { 
-  StyledNavbar, 
-  StyledNavLink, 
-  StyledNavDropdown, 
-  NavItemWrapper, 
-  StyledButton, 
-  SearchInput 
-} from '../styles/NavMenuStyles';
-import { useNavMenu, menuItems, iconMapping } from '../utils/NavMenuUtils';
+import { StyledNavbar, StyledNavLink, StyledNavDropdown, NavItemWrapper, StyledButton, SearchInput } from '../styles/NavMenuStyles';
+import { useNavMenu, menuItems, iconMapping, handleColorPickerToggle } from '../utils/NavMenuUtils';
 
 function NavMenuComp() {
   const { theme } = useTheme();
   const { showColorPickerComp, setShowColorPickerComp, handleLogout } = useNavMenu();
 
   return (
-    <StyledNavbar expand="lg" theme={theme}>
+    <StyledNavbar expand="lg" className="shadow-sm" theme={theme}>
       <Container fluid>
         <Navbar.Brand href="/">
           <FontAwesomeIcon icon={faCloudSunRain} style={{marginRight: '10px', color: '#FF0080', fontSize: '34px'}} />
@@ -35,31 +27,70 @@ function NavMenuComp() {
             </StyledButton>
           </InputGroup>
           <Nav className="mx-auto">
-            {menuItems.mainNav.map((item, index) => (
-              <StyledNavLink key={index} href={item.path}>
-                <FontAwesomeIcon icon={iconMapping[item.icon]} />
-                {item.title}
-              </StyledNavLink>
-            ))}
-            {menuItems.pages.length > 0 && (
-              <StyledNavDropdown title="Páginas" theme={theme}>
+            <NavItemWrapper>
+              {menuItems.mainNav.map((item, index) => (
+                <StyledNavLink 
+                  key={index} 
+                  href={item.path} 
+                  active
+                  style={item.title === 'Perfil' ? {borderColor: '#FF0080', color: '#FF0080'} : {}}
+                >
+                  <FontAwesomeIcon icon={iconMapping[item.icon]} style={{marginRight: '5px'}} />
+                  {item.title}
+                </StyledNavLink>
+              ))}
+              <StyledNavDropdown 
+                title={
+                  <>
+                    <FontAwesomeIcon icon={faFile} style={{marginRight: '5px'}} />
+                    Páginas
+                  </>
+                } 
+                id="basic-nav-dropdown" 
+                theme={theme}
+              >
                 {menuItems.pages.map((item, index) => (
-                  <StyledNavDropdown.Item key={index} href={item.path}>
+                  <NavDropdown.Item key={index} href={item.path}>
                     {item.title}
-                  </StyledNavDropdown.Item>
+                  </NavDropdown.Item>
                 ))}
               </StyledNavDropdown>
-            )}
+              <StyledNavDropdown 
+                title={
+                  <>
+                    <FontAwesomeIcon icon={faUserCircle} style={{marginRight: '5px'}} />
+                    Conta
+                  </>
+                } 
+                id="basic-nav-dropdown" 
+                theme={theme}
+              >
+                {menuItems.account.map((item, index) => (
+                  <NavDropdown.Item 
+                    key={index} 
+                    onClick={item.title === 'Sair' ? handleLogout : undefined}
+                    href={item.title !== 'Sair' ? item.path : undefined}
+                  >
+                    {item.icon && <FontAwesomeIcon icon={iconMapping[item.icon]} style={{marginRight: '5px'}} />}
+                    {item.title}
+                  </NavDropdown.Item>
+                ))}
+              </StyledNavDropdown>
+            </NavItemWrapper>
           </Nav>
           <Nav>
             <NavItemWrapper>
-              <StyledButton href="/notifications" theme={theme}>
+              <StyledButton href="/notificacoes" variant="primary" className="me-2" theme={theme}>
                 <FontAwesomeIcon icon={faBell} />
               </StyledButton>
-              <StyledButton href="/settings" theme={theme}>
+              <StyledButton href="/configuracoes" variant="primary" className="me-2" theme={theme}>
                 <FontAwesomeIcon icon={faCog} />
               </StyledButton>
-              <StyledButton onClick={() => setShowColorPickerComp(!showColorPickerComp)} theme={theme}>
+              <StyledButton 
+                variant="primary" 
+                onClick={() => handleColorPickerToggle(setShowColorPickerComp)} 
+                theme={theme}
+              >
                 <FontAwesomeIcon icon={faPalette} />
               </StyledButton>
               {showColorPickerComp && <ColorPickerComp />}
