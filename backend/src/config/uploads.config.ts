@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
-import * as sharp from 'sharp';
-import * as ffmpeg from 'fluent-ffmpeg';
+import sharp from 'sharp';
+import ffmpeg from 'fluent-ffmpeg';
 import * as fs from 'fs-extra';
 import { Buffer } from 'buffer';
 import { createReadStream } from 'fs';
@@ -102,7 +102,8 @@ export const processVideo = async (base64String: string): Promise<string> => {
       const chunks: Buffer[] = [];
       const inputStream = createReadStream(tempFilePath);
 
-      ffmpeg(inputStream)
+      ffmpeg()
+        .input(inputStream)
         .size(
           `${uploadsConfig.compression.video.maxWidth}x${uploadsConfig.compression.video.maxHeight}`,
         )
@@ -138,7 +139,8 @@ export const processAudio = async (base64String: string): Promise<string> => {
       const chunks: Buffer[] = [];
       const inputStream = createReadStream(tempFilePath);
 
-      ffmpeg(inputStream)
+      ffmpeg()
+        .input(inputStream)
         .audioBitrate(uploadsConfig.compression.audio.bitrate)
         .audioCodec(uploadsConfig.compression.audio.codec)
         .toFormat(uploadsConfig.compression.audio.format)
