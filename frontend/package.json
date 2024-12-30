@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build", 
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth/core": "^0.18.0",
+    "@auth/core": "^0.34.2",
     "@auth/mongodb-adapter": "^2.0.0",
     "@ffmpeg/core": "^0.12.6",
     "@ffmpeg/ffmpeg": "^0.12.10",
