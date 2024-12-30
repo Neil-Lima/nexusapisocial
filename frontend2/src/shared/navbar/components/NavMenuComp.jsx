@@ -1,4 +1,3 @@
-// frontend/src/shared/navbar/components/NavMenuComp.jsx
 'use client';
 import React from 'react';
 import { Navbar, Nav, Container, Form, InputGroup } from 'react-bootstrap';
@@ -50,6 +49,18 @@ function NavMenuComp() {
                 ))}
               </StyledNavDropdown>
             )}
+            <StyledNavDropdown title="Conta" theme={theme}>
+              {menuItems.account.map((item, index) => (
+                <StyledNavDropdown.Item 
+                  key={index} 
+                  onClick={item.path === '/logout' ? handleLogout : null}
+                  href={item.path !== '/logout' ? item.path : '#'}
+                >
+                  {item.icon && <FontAwesomeIcon icon={iconMapping[item.icon]} className="me-2" />}
+                  {item.title}
+                </StyledNavDropdown.Item>
+              ))}
+            </StyledNavDropdown>
           </Nav>
           <Nav>
             <NavItemWrapper>
