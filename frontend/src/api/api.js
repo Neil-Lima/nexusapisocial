@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { getSession } from 'next-auth/react'
 
 const API_CONFIG = {
-  baseURL: 'https://nexusapisocialbackend.vercel.app',
+  baseURL: 'http://localhost:5000',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
@@ -10,10 +11,10 @@ const API_CONFIG = {
 
 export const api = axios.create(API_CONFIG)
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token')
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`
+api.interceptors.request.use(async (config) => {
+  const session = await getSession()
+  if (session?.user?.accessToken) {
+    config.headers.Authorization = `Bearer ${session.user.accessToken}`
   }
   return config
 })

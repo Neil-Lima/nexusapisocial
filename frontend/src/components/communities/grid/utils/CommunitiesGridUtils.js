@@ -11,7 +11,7 @@ export const useCommunitiesGrid = () => {
   useEffect(() => {
     const fetchCommunities = async () => {
       try {
-        const response = await api.get('/communities/my-communities');
+        const response = await api.get('/communities');
         setCommunities(response.data);
       } catch (err) {
         setError(err.response?.data?.message || 'Erro ao carregar comunidades');
