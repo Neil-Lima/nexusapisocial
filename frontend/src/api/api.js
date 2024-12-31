@@ -1,19 +1,22 @@
-import axios from 'axios'
-
+// api.js
 export const API_CONFIG = {
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://nexusapisocialbackend.vercel.app',
+  baseURL: 'https://nexusapisocialbackend.vercel.app',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
   },
 };
 
-export const api = axios.create(API_CONFIG)
-
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token')
+export const setAuthToken = (token) => {
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`
+    API_CONFIG.headers.Authorization = `Bearer ${token}`;
+  } else {
+    delete API_CONFIG.headers.Authorization;
   }
-  return config
-})
+};
+
+export const removeAuthToken = () => {
+  delete API_CONFIG.headers.Authorization;
+};
+
+export default API_CONFIG;

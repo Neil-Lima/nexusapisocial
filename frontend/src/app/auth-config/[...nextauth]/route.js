@@ -1,6 +1,7 @@
-import NextAuth from 'next-auth'
-import CredentialsProvider from 'next-auth/providers/credentials'
-import { API_CONFIG } from '@/api/api'
+// route.js
+import NextAuth from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import { API_CONFIG } from '@/api/api';
 
 const handler = NextAuth({
   providers: [
@@ -19,8 +20,9 @@ const handler = NextAuth({
               email: credentials.email,
               senha: credentials.senha
             })
-          })
-          const data = await response.json()
+          });
+          
+          const data = await response.json();
           
           if (data.access_token) {
             return {
@@ -28,12 +30,12 @@ const handler = NextAuth({
               name: data.user.nome,
               email: data.user.email,
               accessToken: data.access_token
-            }
+            };
           }
-          return null
+          return null;
         } catch (error) {
-          console.log('Auth Error:', error)
-          return null
+          console.log('Auth Error:', error);
+          return null;
         }
       }
     })
@@ -50,18 +52,18 @@ const handler = NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id
-        token.accessToken = user.accessToken
+        token.id = user.id;
+        token.accessToken = user.accessToken;
       }
-      return token
+      return token;
     },
     async session({ session, token }) {
-      session.user.id = token.id
-      session.accessToken = token.accessToken
-      return session
+      session.user.id = token.id;
+      session.accessToken = token.accessToken;
+      return session;
     }
   },
   debug: process.env.NODE_ENV === 'development'
-})
+});
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
