@@ -15,34 +15,53 @@ const handler = NextAuth({
           const response = await fetch(`${API_CONFIG.baseURL}/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(credentials)
+            body: JSON.stringify({
+              email: credentials.email,
+              senha: credentials.senha
+            })
           })
           const data = await response.json()
-          if (data) {
-            return data
+          
+          if (data.access_token) {
+            return {
+              id: data.user.id,
+              name: data.user.nome,
+              email: data.user.email,
+              accessToken: data.access_token
+            }
           }
           return null
         } catch (error) {
+          console.log('Auth Error:', error)
           return null
         }
       }
     })
   ],
+  session: {
+    strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60,
+    updateAge: 24 * 60 * 60
+  },
   pages: {
-    signIn: '/login'
+    signIn: '/login',
+    error: '/login'
   },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.accessToken = user.access_token
+        token.id = user.id
+        token.accessToken = user.accessToken
       }
       return token
     },
     async session({ session, token }) {
+      session.user.id = token.id
       session.accessToken = token.accessToken
       return session
     }
-  }
+  },
+  debug: process.env.NODE_ENV === 'development'
 })
 
 export { handler as GET, handler as POST }
