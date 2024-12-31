@@ -1,10 +1,8 @@
-/* eslint-disable prettier/prettier */
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Story } from '../schemas/story.schema';
 import { CreateStoryDto } from '../dto/create-story.dto';
-import { processMedia, validateMedia } from '../../../config/uploads.config';
 
 @Injectable()
 export class StoriesService {
@@ -14,23 +12,14 @@ export class StoriesService {
   ) {}
 
   async create(userId: string, createStoryDto: CreateStoryDto): Promise<Story> {
-    const mediaValidation = validateMedia(createStoryDto.media);
-    if (!mediaValidation.isValid) {
-      throw new Error('Formato de mídia inválido');
-    }
-
-    const processedMedia = await processMedia(createStoryDto.media);
-    const expiresAt = new Date();
-    expiresAt.setHours(expiresAt.getHours() + 24);
-
     const story = new this.storyModel({
       author: new Types.ObjectId(userId),
-      media: processedMedia,
+      media: createStoryDto.media,
       mediaType: createStoryDto.mediaType,
       timestamp: 'agora',
       views: 0,
       viewers: [],
-      expiresAt
+      expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000)
     });
 
     return await story.save();
