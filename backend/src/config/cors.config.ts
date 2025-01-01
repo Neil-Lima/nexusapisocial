@@ -4,7 +4,7 @@ import { registerAs } from '@nestjs/config';
 
 export const corsConfig = {
   origin: [
-    'http://localhost:3000',
+    'http://localhost:3333',
     'https://nexusapisocialbackend.vercel.app',
     'https://nexusapisocial.netlify.app'
   ],

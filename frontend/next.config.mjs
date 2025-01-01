@@ -25,9 +25,6 @@ const nextConfig = {
     }
     return config
   },
-  experimental: {
-    appDir: true
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
