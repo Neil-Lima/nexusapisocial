@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { registerAs } from '@nestjs/config';
-
 export const corsConfig = {
-  origin: ['http://localhost:3000', 'https://nexusapisocial.netlify.app'],
+  origin: process.env.CORS_ORIGIN.split(','),
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   exposedHeaders: ['Authorization'],
@@ -11,5 +10,6 @@ export const corsConfig = {
   optionsSuccessStatus: 204,
   maxAge: 3600
 };
+
 
 export default registerAs('cors', () => corsConfig);
