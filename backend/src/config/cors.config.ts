@@ -1,15 +1,17 @@
 /* eslint-disable prettier/prettier */
-// cors.config.ts
 import { registerAs } from '@nestjs/config';
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5000',
+  'https://nexusapisocialapp.netlify.app',
+  'https://nexusapisocial.vercel.app'
+];
+
 export const corsConfig = {
-  origin: [
-    'http://localhost:3000',
-    'https://nexusapisocialapp.netlify.app',
-    'https://nexusapisocial.netlify.app'
-  ],
+  origin: allowedOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   exposedHeaders: ['Authorization'],
   credentials: true,
   preflightContinue: false,
@@ -17,3 +19,4 @@ export const corsConfig = {
 };
 
 export default registerAs('cors', () => corsConfig);
+
