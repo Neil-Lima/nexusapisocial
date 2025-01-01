@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { registerAs } from '@nestjs/config';
+
 export const corsConfig = {
-  origin: process.env.CORS_ORIGIN.split(','),
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   exposedHeaders: ['Authorization'],
@@ -11,5 +12,5 @@ export const corsConfig = {
   maxAge: 3600
 };
 
-
 export default registerAs('cors', () => corsConfig);
+
