@@ -4,7 +4,7 @@ import { registerAs } from '@nestjs/config';
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5000',
-  'https://nexusapisocialapp.netlify.app',
+  'https://nexusapisocial.netlify.app/',
   'https://nexusapisocial.vercel.app'
 ];
 
