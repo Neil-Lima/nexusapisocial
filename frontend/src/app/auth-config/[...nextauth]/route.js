@@ -1,7 +1,5 @@
-// route.js
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { API_CONFIG } from '@/api/api';
 
 const handler = NextAuth({
   providers: [
@@ -13,7 +11,7 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         try {
-          const response = await fetch(`${API_CONFIG.baseURL}/auth/login`, {
+          const response = await fetch(`https://nexusapisocialbackend.vercel.app/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
