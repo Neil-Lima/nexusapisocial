@@ -2,7 +2,9 @@ import axios from 'axios'
 import { getSession } from 'next-auth/react'
 
 const API_CONFIG = {
-  baseURL: 'https://nexusapisocialbackend.vercel.app',
+  baseURL: process.env.NODE_ENV === 'production'
+    ? 'https://nexusapisocialbackend.vercel.app'
+    : 'http://localhost:5000',
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
