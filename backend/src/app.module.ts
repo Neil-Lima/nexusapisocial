@@ -10,14 +10,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
-import corsConfig from './config/cors.config';
 import uploadsConfig from './config/uploads.config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [databaseConfig, jwtConfig, corsConfig, uploadsConfig],
+      load: [databaseConfig, jwtConfig, uploadsConfig],
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
